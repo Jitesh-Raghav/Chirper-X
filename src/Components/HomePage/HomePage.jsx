@@ -17,6 +17,7 @@ const HomePage=()=>{
 
         <Grid item xs={0} lg={3} className="hidden lg:block w-full relative" >
             <p className="text-center">right part</p>
+            
         </Grid>
 
        </Grid>

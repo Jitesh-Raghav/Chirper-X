@@ -5,6 +5,7 @@ import * as Yup from 'yup'
 import ImageIcon from '@mui/icons-material/Image';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
+import TweetCard from './TweetCard';
 
 const validationSchema= Yup.object().shape({     //for validation purposes
     content:Yup.string().required("Tweet text is required")
@@ -40,20 +41,20 @@ const HomeSection = () => {
   return (
     <div className="space-y-5">
       <section>
-        <h1 className="py-5 flex items-start text-xl font-bold opacity-90">Home</h1>
+        <h1 className="py-5 flex text-xl font-bold opacity-90">Home</h1>
       </section>
 
-      <section className={"pb-10 flex items-start"}>
+      <section className="pb-10 flex items-start">
         <div className="flex space-x-5">
             <Avatar alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4"/>
             <div className="w-full">
-                <form>
+                <form onSubmit={formik.handleSubmit}>
                     <div>
                       <input type="text" name="content" placeholder='What is happening?'
-                      className="border-none outline-none text-xl bg-transparent"
+                      className="border-none outline-none text-xl bg-transparent flex items-start"
                       {...formik.getFieldProps("content")}/>
                       {formik.errors.content && formik.touched.content && (
-                        <span className='text-red-500'>{formik.errors.content}</span>
+                        <span className='text-red-500 flex items-start'>{formik.errors.content}</span>
                       )}
                     </div>
 
@@ -63,12 +64,12 @@ const HomeSection = () => {
                            <ImageIcon className="text-[#2196f3]"/>
                            <input type="file" name="imageFile" className="hidden" onChange={handleSelectImage}/>
                         </label>
-                         <FmdGoodIcon className="text-[#2196f3]"/>
-                         <TagFacesIcon className="text-[#2196f3]"/>
+                         <FmdGoodIcon className="text-[#2196f3] cursor-pointer"/>
+                         <TagFacesIcon className="text-[#2196f3] cursor-pointer"/>
                       </div>
-
-                      <div className='flex justify'>
-                        <Button sx={{ width: "100%", borderRadius: "20px", paddingY: "8px", paddingX:"20px", bgcolor: "#2196f3" }} variant='contained'>Tweet</Button>
+                      
+                      <div className="ml-[355px]">   
+                        <Button sx={{ width: "100%", borderRadius: "20px", py: "8px", px:"20px", bgcolor: "#2196f3" }} variant='contained' type="submit">Tweet</Button>
                       </div>
                     </div>
 
@@ -76,6 +77,8 @@ const HomeSection = () => {
             </div>
         </div>
       </section>
+
+      <TweetCard/>
     </div>
   )
 }
