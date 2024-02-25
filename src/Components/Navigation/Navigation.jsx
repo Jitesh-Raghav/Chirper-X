@@ -24,6 +24,7 @@ const Navigation = () => {
   }
 
   return (
+   
     <div className="h-screen sticky top-0">
 
       <div className="py-5">
@@ -44,7 +45,7 @@ const Navigation = () => {
       </div>
 
       <div className="py-10">
-        <Button sx={{ width: "100%", borderRadius: "29px", py: "15px", bgcolor: "#2196f3" }} variant='contained'>  {/*Styled with MUI */}
+        <Button sx={{ width: "98%", borderRadius: "29px", py: "15px", bgcolor: "#2196f3" }} variant='contained'>  {/*Styled with MUI */}
           Tweet
         </Button>
 
@@ -93,6 +94,7 @@ const Navigation = () => {
 
 
     </div>
+   
   )
 }
 

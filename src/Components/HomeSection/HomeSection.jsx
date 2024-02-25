@@ -77,8 +77,11 @@ const HomeSection = () => {
             </div>
         </div>
       </section>
-
-      <TweetCard/>
+      
+      <section>
+        {[1,1,1,1].map((items)=><TweetCard/>)}
+      </section>
+      
     </div>
   )
 }
