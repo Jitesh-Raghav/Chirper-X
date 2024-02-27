@@ -12,9 +12,9 @@ import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
-import FavoriteRounded from '@mui/icons-material/FavoriteRounded';
+import { Divider } from '@mui/material';
 
-const TweetCard = () => {
+const TweetDetailsCard = () => {
 
     const navigate = useNavigate();
 
@@ -47,21 +47,21 @@ const TweetCard = () => {
     return (
         <div>
 
-            {/* <div className='flex items-center font-semibold text-gray-700 py-2'>
+            <div className='flex items-center font-semibold text-gray-600 py-2'>
             <RepeatIcon/>
             <p>You Retweet</p>
-        </div> */}
+        </div>
 
             <div className='flex space-x-5'>
                 <Avatar onClick={() => navigate("/profile/${5}")} className="cursor-pointer" alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
 
                 <div className="w-full">
                     <div className="flex justify-between items-center">
-                        <div className="flex items-center cursor-pointer space-x-2">
+                        <div className=" cursor-pointer space-x-2">
 
                             <span className="font-semibold">Jitesh Raghav</span>
                             <VerifiedIcon fontSize='small' className="text-[#2196f3]" />
-                            <span className="text-gray-600">@okayJitesh .    2m</span>
+                            <span className="text-gray-600">@okayJitesh</span>
 
                         </div>
 
@@ -100,40 +100,58 @@ const TweetCard = () => {
                          <img className="border border-gray-400 p-2  rounded-sm w-[34rem]" src="https://wallpapers-clan.com/wp-content/uploads/2023/10/aot-fury-titan-desktop-wallpaper-preview.jpg" alt="" />
                        </div>
                     </div>
+                    
+                    <div className='py-4 flex items-start'>
+                        <p><span className='text-gray-500'>4:21 PM · Feb 15, 2024 </span><span className='font-bold'>· 159.6K </span><span className='text-gray-500'>Views</span></p>
+                    </div>
 
+                <Divider sx={{ bgcolor: 'grey.900' }}/>
                     <div className="flex justify-between items-center py-4 flex-wrap">
-                        <div className='flex items-center space-x-3 text-gray-500'>
+                        <div className='flex items-center space-x-3 text-gray-600'>
                             <ChatBubbleOutlineRoundedIcon className='cursor-pointer' onClick={OpenReplySection}/>
                             <p>18</p>
                         </div>
 
-                        <div className={true? "text-green-500  space-x-3 flex items-center":"text-gray-500 space-x-3 flex items-center"}>
+                        <div className={true? "text-green-500  space-x-3 flex items-center":"text-gray-600 space-x-3 flex items-center"}>
                             <RepeatIcon className='cursor-pointer' onClick={handleRetweet}/>
                             <p>7</p>
                         </div>
 
-                        <div className={true? "text-pink-600  space-x-3 flex items-center":"text-gray-500 space-x-3 flex items-center"}>
+                        <div className={true? "text-pink-600  space-x-3 flex items-center":"text-gray-600 space-x-3 flex items-center"}>
                             {true?<FavoriteRoundedIcon className='cursor-pointer' onClick={handleLike}/>:
                                   <FavoriteBorderRoundedIcon className='cursor-pointer' onClick={handleLike}/>
                              }
                             <p>7</p>
                         </div>
                         
-                        <div className='flex items-center space-x-3 text-gray-500'>
+                        <div className='flex items-center space-x-3 text-gray-600'>
                             <BarChartOutlinedIcon className='cursor-pointer' onClick={OpenReplySection}/>
                             <p>418</p>
                         </div>
 
-                        <div className='flex items-center space-x-3 text-gray-500'>
+                        <div className='flex items-center space-x-3 text-gray-600'>
                             <BookmarkBorderIcon className='cursor-pointer' onClick={OpenReplySection}/>
                         </div>
 
-                        <div className='flex items-center space-x-3 text-gray-500'>
+                        <div className='flex items-center space-x-3 text-gray-600'>
                             <FileUploadOutlinedIcon className='cursor-pointer' onClick={OpenReplySection}/>
                         </div>
 
 
                     </div>
+                <Divider sx={{ bgcolor: 'grey.900' }}/>
+
+                <div className='p-3 flex items-center mb-5'>
+                    <Avatar onClick={() => navigate("/profile/${5}")} className="cursor-pointer" alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
+                    <div>
+                      <input type="text" name="content" placeholder='Post your reply'
+                      className="border-none outline-none bg-transparent text-xl text-gray-500 m-2"/>
+                    </div>
+                    <div className='ml-[200px]'>
+                    <Button variant='contained' sx={{ padding: "6px", paddingX: "10px", borderRadius: "25px", bgcolor: "#2196f3" }}>Reply</Button>
+                    </div>
+                </div>
+                <Divider sx={{ bgcolor: 'grey.800' }}/>
 
                 </div>
 
@@ -145,4 +163,4 @@ const TweetCard = () => {
     )
 }
 
-export default TweetCard
+export default TweetDetailsCard
