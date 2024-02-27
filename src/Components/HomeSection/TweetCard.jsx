@@ -95,7 +95,7 @@ const TweetCard = () => {
                     </div>
 
                     <div className="mt-2">
-                       <div className="cursor-pointer w-full">
+                       <div className="cursor-pointer w-full" onClick={()=>navigate("/tweet/${3}")}>
                          <p className='mb-2 p-0 flex items-start'>Life's gonna hit you hard, hit back harder!!👊<span className="text-[#2196f3]">#AOT #Anime</span></p>
                          <img className="border border-gray-400 p-2  rounded-sm w-[34rem]" src="https://wallpapers-clan.com/wp-content/uploads/2023/10/aot-fury-titan-desktop-wallpaper-preview.jpg" alt="" />
                        </div>

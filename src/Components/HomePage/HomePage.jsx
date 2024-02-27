@@ -4,6 +4,9 @@ import Navigation from "../Navigation/Navigation";
 import HomeSection from "../HomeSection/HomeSection";
 import TweetCard from "../HomeSection/TweetCard";
 import Trending from "../RightPart/Trending";
+import Profile from "../Profile/Profile";
+import {Route,Routes} from 'react-router-dom'; 
+import TweetDetails from "../TweetDetails/TweetDetails";
 
 const HomePage=()=>{
     return(
@@ -14,7 +17,12 @@ const HomePage=()=>{
         </Grid>
 
         <Grid item xs={12} lg={6} className="hidden lg:block w-full relative" >
-            <HomeSection/>
+           
+            <Routes>
+                <Route path="/home" element={ <HomeSection/>}></Route>
+                <Route path="/profile/:id" element={ <Profile/>}></Route>
+                <Route path="/tweet/:id" element={ <TweetDetails/>}></Route>
+            </Routes>
         </Grid>
 
         <Grid item xs={0} lg={3} className="hidden lg:block w-full relative" >
