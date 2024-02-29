@@ -14,6 +14,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TweetCard from "../HomeSection/TweetCard"
+import ProfileModal from './ProfileModal';
 
 
 const Profile = () => {
@@ -65,7 +66,7 @@ const Profile = () => {
             <section>
                 <div className='flex justify-between items-start h-[5rem] ml-5'>
 
-                    <div className=' -mt-[4.5rem] '>
+                    <div className=' -mt-[5rem] '>
                         <Avatar alt="Jitesh Raghav" src="https://avatars.githubusercontent.com/u/93904444?v=4"
                             sx={{ width: "10rem", height: "10rem", border: "4px solid black" }} />
                     </div>
@@ -79,7 +80,7 @@ const Profile = () => {
                 <div>
                     <div className='flex items-center ml-4 mt-4'>
                         <h1 className="font-bold text-lg">Jitesh Raghav</h1>
-                        {true && <VerifiedIcon fontSize='small' className="text-[#2196f3]" />}
+                        {true && <VerifiedIcon fontSize='small' className="text-[#2196f3] ml-1" />}
                     </div>
                     <h1 className='text-gray-500 -ml-[500px]'>@OkayJitesh</h1>
                 </div>
@@ -131,6 +132,9 @@ const Profile = () => {
     </Box>
             </section>
        
+           <section>
+              <ProfileModal/>
+           </section>
 
         </div>
     )
