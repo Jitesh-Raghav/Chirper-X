@@ -13,6 +13,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import FavoriteRounded from '@mui/icons-material/FavoriteRounded';
+import ReplyModal from './ReplyModal';
 
 const TweetCard = () => {
 
@@ -139,7 +140,9 @@ const TweetCard = () => {
 
             </div>
 
-
+          <section>
+            <ReplyModal/>
+          </section>
 
         </div>
     )

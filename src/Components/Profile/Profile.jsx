@@ -19,14 +19,16 @@ import ProfileModal from './ProfileModal';
 
 const Profile = () => {
 
+  const [openProfileModal, setOpenProfileModal]= useState(false);
+  const handleOpenProfileModal = () => setOpenProfileModal(true);
+  const handleClose = () => setOpenProfileModal(false);
+
     const navigate = useNavigate();
     const handleBack = () => navigate(-1);
 
  
 
-    const handleOpenProfileModel = () => {
-        console.log("handle open profile model");
-    }
+   
 
     const handleFollowUser = () => {
         console.log("folow user");
@@ -72,7 +74,7 @@ const Profile = () => {
                     </div>
                     <div className='mt-5 mr-5'>
                         {true ?
-                            <Button onClick={handleOpenProfileModel} sx={{ borderRadius: "20px", bgcolor: "black", color: "white", border: "1px solid white", }}>Edit profile</Button> :
+                            <Button onClick={handleOpenProfileModal} sx={{ borderRadius: "20px", bgcolor: "black", color: "white", border: "1px solid white", }}>Edit profile</Button> :
                             <Button onClick={handleFollowUser} variant="contained" sx={{ borderRadius: "20px" }}>{true ? "Follow" : "Unfollow"}</Button>}
                     </div>
                 </div>
@@ -133,7 +135,7 @@ const Profile = () => {
             </section>
        
            <section>
-              <ProfileModal/>
+              <ProfileModal open={openProfileModal} handleClose={handleClose}/>
            </section>
 
         </div>
