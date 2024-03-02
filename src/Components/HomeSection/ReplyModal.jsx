@@ -25,10 +25,8 @@ const style = {
   borderRadius: 4
 };
 
-export default function ReplyModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+export default function ReplyModal({ open, handleClose }) {
+ 
   const navigate = useNavigate();
 
   const [uploadingImage, setUploadingImage] = useState(false);
@@ -61,7 +59,7 @@ export default function ReplyModal() {
   return (
     <div>
       <Modal
-        open={true}
+        open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -101,7 +99,7 @@ export default function ReplyModal() {
                 <form onSubmit={formik.handleSubmit}>
                   <div>
                     <input type="text" name="content" placeholder='What is happening?'
-                      className="border-none outline-none text-xl bg-transparent flex items-start"
+                      className="border-none outline-none text-xl bg-transparent flex items-start w-full"
                       {...formik.getFieldProps("content")} />
                     {formik.errors.content && formik.touched.content && (
                       <span className='text-red-500 flex items-start'>{formik.errors.content}</span>

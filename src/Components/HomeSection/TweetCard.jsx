@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import RepeatIcon from '@mui/icons-material/Repeat';
 import { Avatar, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -16,6 +16,10 @@ import FavoriteRounded from '@mui/icons-material/FavoriteRounded';
 import ReplyModal from './ReplyModal';
 
 const TweetCard = () => {
+
+    const [openReplyModal, setOpenReplyModal]= useState(false);
+    const handleOpenReplyModal = () => setOpenReplyModal(true);
+    const handleCloseReplyModal = () => setOpenReplyModal(false);
 
     const navigate = useNavigate();
 
@@ -48,7 +52,7 @@ const TweetCard = () => {
     return (
         <div>
 
-            {/* <div className='flex items-center font-semibold text-gray-700 py-2'>
+            {/* <div className='flex items-center font-semibold text-gray-700 py-2'>    
             <RepeatIcon/>
             <p>You Retweet</p>
         </div> */}
@@ -104,7 +108,7 @@ const TweetCard = () => {
 
                     <div className="flex justify-between items-center py-4 flex-wrap">
                         <div className='flex items-center space-x-3 text-gray-500'>
-                            <ChatBubbleOutlineRoundedIcon className='cursor-pointer' onClick={OpenReplySection}/>
+                            <ChatBubbleOutlineRoundedIcon className='cursor-pointer' onClick={handleOpenReplyModal}/>
                             <p>18</p>
                         </div>
 
@@ -141,7 +145,7 @@ const TweetCard = () => {
             </div>
 
           <section>
-            <ReplyModal/>
+            <ReplyModal open={openReplyModal} handleClose={handleCloseReplyModal}/>
           </section>
 
         </div>

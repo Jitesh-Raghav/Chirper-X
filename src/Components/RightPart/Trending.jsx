@@ -28,7 +28,7 @@ const Trending = () => {
         <h1 className='font-bold text-2xl flex items-start ml-2'>  Subscribe to Premium</h1>
         <h1 className='font-semibold my-2 flex items-start'>Subscribe to unlock new features and if eligible, receive a share of ads revenue.</h1>
         <div className="flex items-start ml-2">
-         <Button variant='contained' sx={{ padding: "10px", paddingX: "20px", borderRadius: "25px", bgcolor: "#2196f3" }}>Get Verified</Button>
+         <Button variant='contained' sx={{ padding: "6px", paddingX: "18px", textTransform:"none", borderRadius: "22px", bgcolor: "#2196f3", fontWeight: 'bold', fontSize: '16px' }}>Subscribe</Button>
         </div>
 
       </section>

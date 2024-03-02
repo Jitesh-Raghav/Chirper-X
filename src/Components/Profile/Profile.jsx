@@ -15,7 +15,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TweetCard from "../HomeSection/TweetCard"
 import ProfileModal from './ProfileModal';
-
+    
 
 const Profile = () => {
 

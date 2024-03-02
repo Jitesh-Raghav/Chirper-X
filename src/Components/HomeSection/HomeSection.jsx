@@ -52,7 +52,7 @@ const HomeSection = () => {
                 <form onSubmit={formik.handleSubmit}>
                     <div>
                       <input type="text" name="content" placeholder='What is happening?'
-                      className="border-none outline-none text-xl bg-transparent flex items-start"
+                      className="border-none outline-none text-xl bg-transparent flex items-start w-[90%]"
                       {...formik.getFieldProps("content")}/>
                       {formik.errors.content && formik.touched.content && (
                         <span className='text-red-500 flex items-start'>{formik.errors.content}</span>
