@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { Button } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import SubscriptionModal from '../Subscription/SubscriptionModal';
 
 const Trending = () => {
 
@@ -75,7 +76,9 @@ const Trending = () => {
         <span className='flex items-start text-[#2196f3] cursor-pointer'>Show more</span>
       </section>
       
-      
+      <section>
+         <SubscriptionModal/>
+      </section>
 
     </div>
   )
