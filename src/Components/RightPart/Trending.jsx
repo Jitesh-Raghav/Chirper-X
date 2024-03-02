@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { Button } from '@mui/material';
@@ -6,6 +6,10 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import SubscriptionModal from '../Subscription/SubscriptionModal';
 
 const Trending = () => {
+
+  const [openSubscribeModal, setOpenSubscribeModal]= useState(false);
+  const handleOpenSubscribeModal = () => setOpenSubscribeModal(true);
+  const handleCloseSubscribeModal = () => setOpenSubscribeModal(false);
 
   const handleChangeTheme=()=>{
     console.log("theme changed")
@@ -29,7 +33,7 @@ const Trending = () => {
         <h1 className='font-bold text-2xl flex items-start ml-2'>  Subscribe to Premium</h1>
         <h1 className='font-semibold my-2 flex items-start'>Subscribe to unlock new features and if eligible, receive a share of ads revenue.</h1>
         <div className="flex items-start ml-2">
-         <Button variant='contained' sx={{ padding: "6px", paddingX: "18px", textTransform:"none", borderRadius: "22px", bgcolor: "#2196f3", fontWeight: 'bold', fontSize: '16px' }}>Subscribe</Button>
+         <Button onClick={handleOpenSubscribeModal} variant='contained' sx={{ padding: "6px", paddingX: "18px", textTransform:"none", borderRadius: "22px", bgcolor: "#2196f3", fontWeight: 'bold', fontSize: '16px' }}>Subscribe</Button>
         </div>
 
       </section>
@@ -77,7 +81,7 @@ const Trending = () => {
       </section>
       
       <section>
-         <SubscriptionModal/>
+         <SubscriptionModal open={openSubscribeModal} handleClose={handleCloseSubscribeModal}/>
       </section>
 
     </div>

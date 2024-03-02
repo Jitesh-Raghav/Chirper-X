@@ -15,7 +15,7 @@ const style = {
   left: '48%',
   transform: 'translate(-50%, -50%)',
   width: 570,
-  bgcolor: 'background.paper',
+  bgcolor: 'white',
   border: 'none',
   outline: "none",
   boxShadow: 24,
@@ -64,7 +64,7 @@ const ProfileModal = ({ open, handleClose }) => {
       >
         <Box sx={style}>
           <form onSubmit={formik.handleSubmit}>
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between text-white'>
               <div className='flex items-center space-x-3'>
                 <IconButton onClick={handleClose} aria-label='delete'>
                   <CloseIcon />

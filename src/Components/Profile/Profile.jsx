@@ -15,7 +15,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TweetCard from "../HomeSection/TweetCard"
 import ProfileModal from './ProfileModal';
-    
+
 
 const Profile = () => {
 
@@ -74,7 +74,7 @@ const Profile = () => {
                     </div>
                     <div className='mt-5 mr-5'>
                         {true ?
-                            <Button onClick={handleOpenProfileModal} sx={{ borderRadius: "20px", bgcolor: "black", color: "white", border: "1px solid white", }}>Edit profile</Button> :
+                            <Button onClick={handleOpenProfileModal} sx={{ borderRadius: "20px", bgcolor: "black", paddingX:"20px", textTransform:"none", color: "white", border: "1px solid white", }}>Edit profile</Button> :
                             <Button onClick={handleFollowUser} variant="contained" sx={{ borderRadius: "20px" }}>{true ? "Follow" : "Unfollow"}</Button>}
                     </div>
                 </div>

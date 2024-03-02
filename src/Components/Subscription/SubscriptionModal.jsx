@@ -12,24 +12,22 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 600,
   border:"none",
-  outline:"none",
+  outline:"gray",
   bgcolor: 'black',
-  border: '2px solid #000',
+  border: '1px solid gray',
   boxShadow: 24,
   borderRadius:3 ,
   p: 4,
 };
 
-export default function SubscriptionModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+export default function SubscriptionModal({open, handleClose}) {
+  
+  
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
-        open={true}
+        open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -47,17 +45,17 @@ export default function SubscriptionModal() {
                   <p className='py-3 ml-[125px]'>Choose the right subscription for you:</p>
               </div>
 
-              <div className='flex py-4 ml-10 space-x-5'>
-                  <button className='bg-gray-950 py-7 px-5 rounded-xl cursor-pointer border border-gray-700 hover:border-blue-500 shadow-lg'>
-                     <p className='flex items-start text-sm text-gray-300 py'>Premium</p>
+              <div className='flex py-4 ml-5 space-x-5'>
+                  <button className='bg-gray-950 py-7 px-8 rounded-xl cursor-pointer border border-gray-700 hover:border-blue-500 shadow-lg'>
+                     <p className='flex items-start text-sm text-gray-600 py'>Premium</p>
                      <p className='font-lg font-semibold flex items-start text-white'>I am an individual</p>
-                     <p className='flex items-start text-sm text-gray-300'>For individuals and creators</p>
+                     <p className='flex items-start text-sm text-gray-600'>For individuals and creators</p>
                   </button>
 
-                  <button className='bg-gray-950 py-7 px-5 rounded-xl cursor-pointer border border-gray-700 hover:border-blue-500 shadow-lg'>
-                     <p className='flex items-start text-sm  text-gray-300'>Verified Organizations</p>
+                  <button className='bg-gray-950 py-7 px-8 rounded-xl cursor-pointer border border-gray-700 hover:border-blue-500 shadow-lg'>
+                     <p className='flex items-start text-sm  text-gray-600'>Verified Organizations</p>
                      <p className='font-lg font-semibold flex items-start text-white'>I am an Organization</p>
-                     <p className='flex items-start text-sm  text-gray-300'>For business agencies, govt</p>
+                     <p className='flex items-start text-sm  text-gray-600'>For business agencies, govt</p>
                   </button>
               </div>
 

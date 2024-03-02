@@ -17,8 +17,8 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 600,
-  bgcolor: 'background.paper',
-  border: 'none',
+  bgcolor: 'black',
+  border: '1px solid gray',
   outline: 'none',
   boxShadow: 24,
   p: 4,
@@ -65,7 +65,7 @@ export default function ReplyModal({ open, handleClose }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div className='flex space-x-5'>
+          <div className='flex space-x-5  text-white'>
             <Avatar onClick={() => navigate("/profile/${5}")} className="cursor-pointer" alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
 
             <div className="w-full">
