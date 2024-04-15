@@ -1,5 +1,6 @@
 import React from 'react'
-import { Grid } from '@mui/material';
+import { Button, Grid } from '@mui/material';
+import { GoogleLogin } from '@react-oauth/google';
 
 const Authentication = () => {
   return (
@@ -16,10 +17,27 @@ const Authentication = () => {
 
             
           </Grid>
+
+          <Grid className='px-10' item lg={5} xs={12}>
+            <h1 className='font-bold text-7xl'>Happening Now</h1>
+            <h1 className='font-bold text-3xl py-16'>Join Twitter Today</h1>
+          
+            <div className='w-[60%]'>
+               <div className='w-full'>
+                 <GoogleLogin width={330}/>
+                 <p className='py-5 text-center'>OR</p>
+                 <Button fullWidth variant="contained" size="large" sx={{borderRadius:"29px", py:"7px"}}>Create Account</Button>
+               </div>
+            </div>
+          
+          
+          </Grid>
+
+
        </Grid>
     </div>
   )
 }
 
 export default Authentication;
- 
+  
