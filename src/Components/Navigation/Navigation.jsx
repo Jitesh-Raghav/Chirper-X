@@ -6,11 +6,17 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import logo from "./bird.png"
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../Store/Auth/Action';
 
 
 
 const Navigation = () => {
+
+  const {auth}= useSelector(store=>store)
   const navigate = useNavigate();
+
+  const dispatch= useDispatch()
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -24,6 +30,7 @@ const Navigation = () => {
   const handleLogout = () => {
     console.log("logout");
     handleClose()
+    dispatch(logout())
   }
 
   return (
@@ -61,10 +68,10 @@ const Navigation = () => {
           <Avatar alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
 
           <div className=''>
-            <span className="">Jitesh Raghav</span>
-            <span className="block opacity-70">@okayJitesh</span>
+            <p>{auth.user?.fullName}</p>
+            <span className="block opacity-70">@{auth.user?.fullName.split(" ").join("_").toLowerCase()}</span>
           </div>
-
+ 
          
           <Button         
             id="basic-button"

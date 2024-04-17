@@ -38,7 +38,7 @@ const Authentication = () => {
                </div>
 
                <div>
-                <h1 className='mt-10 mb-4 flex items-start'>Already Have Account?</h1>
+                <h1 className='mt-10 mb-4 flex items-start'>Already have an account?</h1>
                 <Button onClick={handleOpenAuthModal} fullWidth variant="outlined" size="large" sx={{borderRadius:"29px", py:"7px", textTransform:"none"}}>Sign In</Button>
                </div>
             </div>
