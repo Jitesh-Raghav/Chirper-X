@@ -17,7 +17,7 @@ function App() {
 
     if(jwt){
       dispatch(getUserProfile(jwt))
-      navigate("/")
+      navigate("/home")
     }
 
   },[auth.jwt])
