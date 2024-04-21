@@ -93,7 +93,7 @@ export const deleteTweet=(tweetId)=>async(dispatch)=>{
     try{
       const{data}= await api.post(`/api/tweet/${tweetId}`)
       console.log("delete tweet",data)
-      dispatch({type:TWEET_DELETE_SUCCESS, payload:data})
+      dispatch({type:TWEET_DELETE_SUCCESS, payload:tweetId})
     }catch(error){
         console.log("error: ",error)
       dispatch({type:TWEET_DELETE_FAILURE, payload:error.message})
