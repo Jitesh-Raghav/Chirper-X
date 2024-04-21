@@ -8,7 +8,7 @@ const initialState={
     tweet:null, 
 }
 
-const tweetReducer=(state=initialState,action)=>{
+export const tweetReducer=(state=initialState,action)=>{
 
     switch (action.type) {
         case TWEET_CREATE_REQUEST:
