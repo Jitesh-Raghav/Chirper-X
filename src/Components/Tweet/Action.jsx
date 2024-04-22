@@ -3,11 +3,11 @@ import { FIND_TWEET_BY_ID_FAILURE, FIND_TWEET_BY_ID_SUCCESS, GET_ALL_TWEETS_FAIL
 
 export const getAllTweets=()=>async(dispatch)=>{
     try{
-      const{data}= await api.get("/api/tweets")
+      const{data}= await api.get(`/api/tweets/`)
       console.log("get all tweets: ",data)
       dispatch({type:GET_ALL_TWEETS_SUCCESS, payload:data})
     }catch(error){
-        console.log("error: ",error)
+        console.log("error is: ",error)
       dispatch({type:GET_ALL_TWEETS_FAILURE, payload:error.message})
     }
 }
