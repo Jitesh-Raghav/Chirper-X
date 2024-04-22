@@ -8,7 +8,8 @@ import TagFacesIcon from '@mui/icons-material/TagFaces';
 import TweetCard from './TweetCard';
 import ReplyModal from './ReplyModal';
 import { getAllTweets } from '../Tweet/Action';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { tweetReducer } from '../Tweet/Reducer';
 
 const validationSchema= Yup.object().shape({     //for validation purposes
     content:Yup.string().required("Tweet text is required")
@@ -20,13 +21,16 @@ const HomeSection = () => {
   const [selectedImage, setSelectedImage]= useState();
   const dispatch= useDispatch();
 
+  const {tweet} = useSelector(store=>store)
+  console.log("tweet: "+ JSON.stringify(tweet))
+
     const handleSubmit=(values)=>{
      console.log("values ", values)
     }
 
     useEffect(()=>{
       dispatch(getAllTweets())
-    },[])
+    },[tweet.like])
 
    const formik=useFormik({
     initialValues:{
@@ -87,7 +91,7 @@ const HomeSection = () => {
       </section>
       
       <section>
-        {[1,1,1,1].map((items)=><TweetCard/>)}
+        {tweet.tweets.map((item)=><TweetCard item={item}/>)}
       </section>
       
     </div>

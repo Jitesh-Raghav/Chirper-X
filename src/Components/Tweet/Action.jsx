@@ -80,7 +80,7 @@ export const createRetweet=(tweetId)=>async(dispatch)=>{
 
 export const likeTweet=(tweetId)=>async(dispatch)=>{
     try{
-      const{data}= await api.post(`/api/${tweetId}/like`)
+      const{data}= await api.post(`/api/${tweetId}/likes`)
       console.log("Like tweet",data)
       dispatch({type:LIKE_TWEET_SUCCESS, payload:data})
     }catch(error){
