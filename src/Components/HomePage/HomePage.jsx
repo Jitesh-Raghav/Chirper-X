@@ -21,13 +21,12 @@ const HomePage=()=>{
             <Routes>
                 <Route path="/home" element={ <HomeSection/>}></Route>
                 <Route path="/profile/:id" element={ <Profile/>}></Route>
-                <Route path="/tweet/:id" element={ <TweetDetails/>}></Route>
+                 <Route path="/tweet/:id" element={ <TweetDetails/>}></Route> 
             </Routes>
         </Grid>
 
         <Grid item xs={0} lg={3} className="hidden lg:block w-full relative" >
            <Trending/>
-            
         </Grid>
 
        </Grid>

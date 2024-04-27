@@ -14,7 +14,7 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import { Divider } from '@mui/material';
 
-const TweetDetailsCard = () => {
+const TweetDetailsCard = ({items}) => {
 
     const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ const TweetDetailsCard = () => {
 
             <div className='flex items-center font-semibold text-gray-600 py-2'>
             <RepeatIcon/>
-            <p>You Retweet</p>
+            <p>You Retweeted</p>
         </div>
 
             <div className='flex space-x-5'>
@@ -59,7 +59,7 @@ const TweetDetailsCard = () => {
                     <div className="flex justify-between items-center">
                         <div className=" cursor-pointer space-x-2">
 
-                            <span className="font-semibold">Jitesh Raghav</span>
+                            <span className="font-semibold">{items.user.fullName}</span>
                             <VerifiedIcon fontSize='small' className="text-[#2196f3]" />
                             <span className="text-gray-600">@okayJitesh</span>
 
@@ -96,8 +96,8 @@ const TweetDetailsCard = () => {
 
                     <div className="mt-2">
                        <div className="cursor-pointer w-full" onClick={()=>navigate("/tweet/${3}")}>
-                         <p className='mb-2 p-0 flex items-start'>Life's gonna hit you hard, hit back harder!!👊<span className="text-[#2196f3]">#AOT #Anime</span></p>
-                         <img className="border border-gray-400 p-2  rounded-sm w-[34rem]" src="https://wallpapers-clan.com/wp-content/uploads/2023/10/aot-fury-titan-desktop-wallpaper-preview.jpg" alt="" />
+                         <p className='mb-2 p-0 flex items-start'>{items.content}<span className="text-[#2196f3]"></span></p>
+                         <img className="border border-gray-400 p-2  rounded-sm w-[34rem]" src={items.image} alt="" />
                        </div>
                     </div>
                     

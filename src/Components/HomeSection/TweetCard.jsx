@@ -15,7 +15,7 @@ import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import FavoriteRounded from '@mui/icons-material/FavoriteRounded';
 import ReplyModal from './ReplyModal';
 import { useDispatch } from 'react-redux';
-import { likeTweet } from '../Tweet/Action';
+import { createRetweet, likeTweet } from '../Tweet/Action';
 
 const TweetCard = ({item}) => {
 
@@ -39,18 +39,19 @@ const TweetCard = ({item}) => {
     const handleDeleteTweet = () => {
       console.log("Tweet Deleted");
       handleClose()
-    }
+    }   
 
     const OpenReplySection=()=>{
       console.log("reply section")
     }
 
     const handleRetweet=()=>{
+        dispatch(createRetweet(item?.id))
         console.log("handle retweet")
     }
 
     const handleLike=()=>{
-        dispatch(likeTweet(item.id))
+        dispatch(likeTweet(item?.id))
         console.log("handle Likes")
     }
 
@@ -63,15 +64,15 @@ const TweetCard = ({item}) => {
         </div> */}
 
             <div className='flex space-x-5'>
-                <Avatar onClick={() => navigate("/profile/${5}")} className="cursor-pointer" alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
+                { <Avatar onClick={() => navigate(`/profile/${item?.user.id}`)} className="cursor-pointer" alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" /> }
 
                 <div className="w-full">
                     <div className="flex justify-between items-center">
                         <div className="flex items-center cursor-pointer space-x-2">
 
-                            <span className="font-semibold">{item.user.fullName}</span>
+                            <span className="font-semibold">{item?.user?.fullName}</span>
                             <VerifiedIcon fontSize='small' className="text-[#2196f3]" />
-                            <span className="text-gray-500">@{item.user.fullName.split(" ").join("_").toLowerCase()} .    2m</span>
+                            <span className="text-gray-500">@{item?.user?.fullName.split(" ").join("_").toLowerCase()} .    2m</span>
 
                         </div>
 
@@ -105,28 +106,28 @@ const TweetCard = ({item}) => {
                     </div>
 
                     <div className="mt-0">
-                       <div className="cursor-pointer w-full" onClick={()=>navigate("/tweet/${3}")}>
-                         <p className='mb-2 p-0 flex items-start'>{item.content} <span className="text-[#2196f3]"></span></p>
-                         <img className="border border-gray-800 p-2  rounded-sm w-[34rem]" src={item.image} alt="" />
+                       <div className="cursor-pointer w-full"  onClick={()=>navigate(`/tweet/${item?.id}`)} >
+                         <p className='mb-2 p-0 flex items-start'>{item?.content} <span className="text-[#2196f3]"></span></p>
+                         <img className="border border-gray-800 p-2  rounded-sm w-[34rem]" src={item?.image} alt="" />
                        </div>
                     </div>
 
                     <div className="flex justify-between items-center py-4 flex-wrap">
                         <div className='flex items-center space-x-3 text-gray-500'>
                             <ChatBubbleOutlineRoundedIcon className='cursor-pointer' onClick={handleOpenReplyModal}/>
-                            <p>{item.totalReplies}</p>
+                            <p>{item?.totalReplies}</p>
                         </div>
 
-                        <div className={item.retweet? "text-green-500  space-x-3 flex items-center":"text-gray-500 space-x-3 flex items-center"}>
+                        <div className={item?.retweet? "text-green-500  space-x-3 flex items-center":"text-gray-500 space-x-3 flex items-center"}>
                             <RepeatIcon className='cursor-pointer' onClick={handleRetweet}/>
-                            <p>{item.totalRetweets}</p>
+                            <p>{item?.totalRetweets}</p>
                         </div>
 
-                        <div className={item.liked? "text-pink-600  space-x-3 flex items-center":"text-gray-500 space-x-3 flex items-center"}>
-                            {item.liked?<FavoriteRoundedIcon className='cursor-pointer' onClick={handleLike}/>:
+                        <div className={item?.liked? "text-pink-600  space-x-3 flex items-center":"text-gray-500 space-x-3 flex items-center"}>
+                            {item?.liked? <FavoriteRoundedIcon className='cursor-pointer' onClick={handleLike}/>:
                                   <FavoriteBorderRoundedIcon className='cursor-pointer' onClick={handleLike}/>
                              }
-                            <p>{item.totalLikes}</p>
+                            <p>{item?.totalLikes}</p>
                         </div>
                         
                         <div className='flex items-center space-x-3 text-gray-500'>
@@ -150,7 +151,7 @@ const TweetCard = ({item}) => {
             </div>
 
           <section>
-            <ReplyModal open={openReplyModal} handleClose={handleCloseReplyModal}/>
+            <ReplyModal item={item} open={openReplyModal} handleClose={handleCloseReplyModal}/>
           </section>
 
         </div>

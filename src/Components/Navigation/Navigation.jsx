@@ -45,9 +45,9 @@ const Navigation = () => {
       <div className="space-y-6">
         {NavigationMenu.map((item) =>
           <div
-            className="cursor-pointer flex space-x-3" onClick={() => item.title === "Profile" ? navigate('/profile/{5}') : navigate(item.path)}>
-            {item.icon}
-            <p className="text-xl cursor-pointer">{item.title}</p>
+            className="cursor-pointer flex space-x-3" onClick={() => item?.title === "Profile" ? navigate('/profile/{5}') : navigate(item?.path)}>
+            {item?.icon}
+            <p className="text-xl cursor-pointer">{item?.title}</p>
           </div>)}
       </div>
 

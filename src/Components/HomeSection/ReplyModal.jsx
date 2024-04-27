@@ -9,6 +9,8 @@ import ImageIcon from '@mui/icons-material/Image';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { createTweetReply } from '../Tweet/Action';
 
 
 const style = {
@@ -25,22 +27,25 @@ const style = {
   borderRadius: 4
 };
 
-export default function ReplyModal({ open, handleClose }) {
+export default function ReplyModal({ open, handleClose, item }) {
  
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [uploadingImage, setUploadingImage] = useState(false);
   const [selectedImage, setSelectedImage] = useState();
 
   const handleSubmit = (values) => {
+    dispatch(createTweetReply(values))
     console.log("handle submit", values)
+    handleClose()
   }
 
   const formik = useFormik({
     initialValues: {
       content: "",
       image: "",
-      tweetId: 4,
+      tweetId: item?.id,
     },
     onSubmit: handleSubmit
   })
@@ -66,24 +71,24 @@ export default function ReplyModal({ open, handleClose }) {
       >
         <Box sx={style}>
           <div className='flex space-x-5  text-white'>
-            <Avatar onClick={() => navigate("/profile/${5}")} className="cursor-pointer" alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
+            <Avatar onClick={() => navigate(`/profile/${item?.user?.id}`)} className="cursor-pointer" alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
 
             <div className="w-full">
               <div className="flex justify-between items-center">
                 <div className="flex items-center cursor-pointer space-x-2">
 
-                  <span className="font-semibold">Jitesh Raghav</span>
+                  <span className="font-semibold">{item?.user.fullName}</span>
                   <VerifiedIcon fontSize='small' className="text-[#2196f3]" />
-                  <span className="text-gray-600">@okayJitesh .    2m</span>
+                  <span className="text-gray-600">@{item?.user.fullName.split(" ").join("_").toLowerCase()} .    2m</span>
 
                 </div>
 
               </div>
 
               <div className="mt-2">
-                <div className="cursor-pointer w-full" onClick={() => navigate("/tweet/${3}")}>
-                  <p className='mb-2 p-0 flex items-start'>Life's gonna hit you hard, hit back harder!!👊<span className="text-[#2196f3]">#AOT #Anime</span></p>
-                  <img className="border border-gray-400 p-2  rounded-sm w-[34rem]" src="https://wallpapers-clan.com/wp-content/uploads/2023/10/aot-fury-titan-desktop-wallpaper-preview.jpg" alt="" />
+                <div className="cursor-pointer w-full" onClick={() => navigate(`/tweet/${item?.id}`)}>
+                  <p className='mb-2 p-0 flex items-start'>{item?.user?.content}</p>
+                  <img className="border border-gray-400 p-2  rounded-sm w-[34rem]" src={item?.image} alt="" />
                 </div>
               </div>
 
@@ -92,7 +97,7 @@ export default function ReplyModal({ open, handleClose }) {
 
 
 
-          <section className="py-5 mt-4 flex items-start">
+          <section className="py-5 mt-4 flex items-start text-white">
             <div className="flex space-x-5">
               <Avatar alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
               <div className="w-full">

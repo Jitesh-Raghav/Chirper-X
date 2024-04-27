@@ -30,7 +30,7 @@ const HomeSection = () => {
 
     useEffect(()=>{
       dispatch(getAllTweets())
-    },[tweet.like])
+    },[tweet.like, tweet.retweet])
 
    const formik=useFormik({
     initialValues:{
@@ -89,6 +89,8 @@ const HomeSection = () => {
             </div>
         </div>
       </section>
+      {/* <hr className="border-t border-gray-700 mt-0 mb-6" /> */}
+
       
       <section>
         {tweet.tweets.map((item)=><TweetCard item={item}/>)}
