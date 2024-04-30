@@ -14,6 +14,7 @@ import { logout } from '../../Store/Auth/Action';
 const Navigation = () => {
 
   const {auth}= useSelector(store=>store)
+  console.log(auth)
   const navigate = useNavigate();
 
   const dispatch= useDispatch()
@@ -35,6 +36,8 @@ const Navigation = () => {
 
   return (
    
+
+  
     <div className="h-screen sticky top-0">
 
       <div className="py-5 w-16">
@@ -45,7 +48,7 @@ const Navigation = () => {
       <div className="space-y-6">
         {NavigationMenu.map((item) =>
           <div
-            className="cursor-pointer flex space-x-3" onClick={() => item?.title === "Profile" ? navigate('/profile/{5}') : navigate(item?.path)}>
+            className="cursor-pointer flex space-x-3" onClick={() => item?.title === "Profile" ? navigate(`/profile/${auth?.user?.id}`) : navigate(item?.path)}>
             {item?.icon}
             <p className="text-xl cursor-pointer">{item?.title}</p>
           </div>)}

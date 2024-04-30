@@ -15,6 +15,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TweetCard from "../HomeSection/TweetCard"
 import ProfileModal from './ProfileModal';
+import { useSelector } from 'react-redux';
 
 
 const Profile = () => {
@@ -25,10 +26,8 @@ const Profile = () => {
 
     const navigate = useNavigate();
     const handleBack = () => navigate(-1);
-
- 
-
-   
+    
+    const {auth}= useSelector(store=>store)
 
     const handleFollowUser = () => {
         console.log("folow user");
@@ -55,7 +54,7 @@ const Profile = () => {
                 <KeyboardBackspaceIcon className='cursor-pointer' onClick={handleBack} />
 
                 <div >
-                    <h1 className="pt-5 text-xl font-bold opacity-90 ml-5 leading-tight">Jitesh Raghav</h1>
+                    <h1 className="pt-5 text-xl font-bold opacity-90 ml-5 leading-tight">{auth?.user?.fullName}</h1>
                     <p className='text-gray-500 text-sm  flex items-start ml-5 mb-1'>6,112 posts</p>
                 </div>
 
@@ -79,12 +78,12 @@ const Profile = () => {
                     </div>
                 </div>
 
-                <div>
-                    <div className='flex items-center ml-4 mt-4'>
-                        <h1 className="font-bold text-lg">Jitesh Raghav</h1>
+                <div className='ml-4'>
+                    <div className='flex items-center mt-4'>
+                        <h1 className="font-bold text-lg">{auth?.user?.fullName}</h1>
                         {true && <VerifiedIcon fontSize='small' className="text-[#2196f3] ml-1" />}
                     </div>
-                    <h1 className='text-gray-500 -ml-[500px]'>@OkayJitesh</h1>
+                    <h1 className='text-gray-500 flex items-start'>@{auth?.user?.fullName.split(" ").join("_").toLowerCase()}</h1>
                 </div>
 
                 <div className='my-3 ml-4 flex items-start'>

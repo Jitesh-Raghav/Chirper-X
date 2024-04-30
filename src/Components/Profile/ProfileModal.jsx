@@ -8,6 +8,9 @@ import { Avatar, IconButton, TextField } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { grey } from '@mui/material/colors';
+import { useDispatch } from 'react-redux';
+import { updateUserProfile } from '../../Store/Auth/Action';
+import { UploadToCloudinary } from '../../Utils/UploadToCloudinary';
 
 const style = {
   position: 'absolute',
@@ -28,8 +31,11 @@ const ProfileModal = ({ open, handleClose }) => {
 
   // const [open, setOpen] = React.useState(false);
   const [uploading, setUploading] = useState(false);
+  const dispatch = useDispatch();
+  const [selectedImage, setSelectedImage]= useState("")
 
   const handleSubmit = (values) => {
+    dispatch(updateUserProfile(values))
     console.log("handle submit", values)
   }
 
@@ -45,10 +51,10 @@ const ProfileModal = ({ open, handleClose }) => {
     onSubmit: handleSubmit
   })
 
-  const handleImageChange = (event) => {
+  const handleImageChange = async (event) => {
     setUploading(true);
     const { name } = event.target
-    const file = event.target.files[0];
+    const file = await UploadToCloudinary(event.target.files[0]);
     formik.setFieldValue(name, file);
     setUploading(false);
   }

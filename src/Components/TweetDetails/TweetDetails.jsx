@@ -46,7 +46,7 @@ const TweetDetails = () => {
        
 
       <section>
-        {tweet.tweet.replyTweets.map((item)=><TweetCard item={item}/>)}
+        {tweet?.tweet?.replyTweets?.map((item)=><TweetCard key={item?.id} item={item}/>)}
       </section>
 
         {/* <section>

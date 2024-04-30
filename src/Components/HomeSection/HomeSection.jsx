@@ -7,9 +7,10 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 import TweetCard from './TweetCard';
 import ReplyModal from './ReplyModal';
-import { getAllTweets } from '../Tweet/Action';
+import { createTweet, getAllTweets } from '../Tweet/Action';
 import { useDispatch, useSelector } from 'react-redux';
 import { tweetReducer } from '../Tweet/Reducer';
+import { UploadToCloudinary } from '../../Utils/UploadToCloudinary';
 
 const validationSchema= Yup.object().shape({     //for validation purposes
     content:Yup.string().required("Tweet text is required")
@@ -24,8 +25,11 @@ const HomeSection = () => {
   const {tweet} = useSelector(store=>store)
   console.log("tweet: "+ JSON.stringify(tweet))
 
-    const handleSubmit=(values)=>{
+    const handleSubmit=(values, actions)=>{
+      dispatch(createTweet(values))
+      actions.resetForm()
      console.log("values ", values)
+     setSelectedImage("")
     }
 
     useEffect(()=>{
@@ -35,15 +39,15 @@ const HomeSection = () => {
    const formik=useFormik({
     initialValues:{
         content:"",
-        image:""
-    },
+        image:"",
+        isTweet:true},
     onSubmit:handleSubmit, 
     validationSchema
    });
 
-   const handleSelectImage=(event)=>{
+   const handleSelectImage= async (event)=>{
      setUploadingImage(true);
-     const imgUrl= event.target.files[0]
+     const imgUrl= await UploadToCloudinary(event.target.files[0])
      formik.setFieldValue("image", imgUrl);
      setSelectedImage(imgUrl);
      setUploadingImage(false);
@@ -86,6 +90,9 @@ const HomeSection = () => {
                     </div>
 
                 </form>
+                <div className={`${selectedImage ? 'rounded-xl mt-5 p-5 border border-solid border-blue-400' : ''}`}>
+                  {selectedImage && <img className="rounded-lg " src={selectedImage}/>}
+                </div>
             </div>
         </div>
       </section>

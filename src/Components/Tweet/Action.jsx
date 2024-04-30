@@ -58,11 +58,11 @@ export const createTweet=(tweetData)=>async(dispatch)=>{
 
 export const createTweetReply=(tweetData)=>async(dispatch)=>{
     try{
-      const{data}= await api.post(`/api/tweets/reply`, tweetData)
+      const{data}= await api.post(`/api/tweets/reply`, tweetData, { timeout: 5000 })
       console.log("reply tweet",data)
       dispatch({type:REPLY_TWEET_SUCCESS, payload:data})
     }catch(error){
-        console.log("error: ",error)
+        console.log("error aa gya: ",error)
       dispatch({type:REPLY_TWEET_FAILURE, payload:error.message})
     }
 }
