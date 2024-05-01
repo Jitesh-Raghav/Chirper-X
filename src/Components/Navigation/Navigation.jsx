@@ -68,7 +68,7 @@ const Navigation = () => {
       <div className="flex items-center">
 
         <div className="flex items-center space-x-3">
-          <Avatar alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" />
+          <Avatar alt="username" src={auth?.user?.image} />
 
           <div className=''>
             <p>{auth.user?.fullName}</p>

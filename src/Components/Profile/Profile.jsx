@@ -61,14 +61,14 @@ const Profile = () => {
             </section>
 
             <section>
-                <img className="w-[100%] h-[15rem] object-cover object-top" src="https://ogden_images.s3.amazonaws.com/www.lockhaven.com/images/2021/01/06173002/BreakingBad1.jpg" alt="" />
+                <img className="w-[100%] h-[15rem] object-cover object-top" src={auth?.user?.backgroundImage} alt="" />
             </section>
 
             <section>
                 <div className='flex justify-between items-start h-[5rem] ml-5'>
 
                     <div className=' -mt-[5rem] '>
-                        <Avatar alt="Jitesh Raghav" src="https://avatars.githubusercontent.com/u/93904444?v=4"
+                        <Avatar alt="Jitesh Raghav" src={auth?.user?.image}
                             sx={{ width: "10rem", height: "10rem", border: "4px solid black" }} />
                     </div>
                     <div className='mt-5 mr-5'>
@@ -87,12 +87,12 @@ const Profile = () => {
                 </div>
 
                 <div className='my-3 ml-4 flex items-start'>
-                    <p>Toto, I've a feeling we're not in Kansas anymore.</p>
+                    <p>{auth?.user?.bio}</p>
                 </div>
 
                 <div className='flex items-center space-x-3 ml-2'>
                     <p className='text-gray-500 flex items-center '><BusinessCenterOutlinedIcon sx={{ color: grey[500], margin: "2px" }} /> Education</p>
-                    <p className='text-gray-500 flex items-center '><RoomOutlinedIcon sx={{ color: grey[500] }} /> Gurgaon</p>
+                    <p className='text-gray-500 flex items-center '><RoomOutlinedIcon sx={{ color: grey[500] }} />{auth?.user?.location}</p>
                     <p className='flex items-center m-2 text-blue-500 hover:underline cursor-pointer' ><AttachFileOutlinedIcon sx={{ color: grey[500] }} /> <Link to="https://rickroll.it/rickroll.mp4" target="_blank" rel="noopener noreferrer">bit.ly/2YgVeGM</Link></p>
                     <p className='text-gray-500 flex items-center '><CalendarMonthOutlinedIcon sx={{ color: grey[500], margin: "2px" }} /> Joined August 2009</p>
                 </div>

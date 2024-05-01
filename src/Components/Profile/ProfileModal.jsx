@@ -8,7 +8,7 @@ import { Avatar, IconButton, TextField } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { grey } from '@mui/material/colors';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateUserProfile } from '../../Store/Auth/Action';
 import { UploadToCloudinary } from '../../Utils/UploadToCloudinary';
 
@@ -32,11 +32,14 @@ const ProfileModal = ({ open, handleClose }) => {
   // const [open, setOpen] = React.useState(false);
   const [uploading, setUploading] = useState(false);
   const dispatch = useDispatch();
-  const [selectedImage, setSelectedImage]= useState("")
+  const [selectedImage, setSelectedImage]= useState("");
+  const {auth}= useSelector(store=>store)
 
   const handleSubmit = (values) => {
     dispatch(updateUserProfile(values))
     console.log("handle submit", values)
+    setSelectedImage("")
+    handleClose();
   }
 
   const formik = useFormik({
@@ -56,6 +59,7 @@ const ProfileModal = ({ open, handleClose }) => {
     const { name } = event.target
     const file = await UploadToCloudinary(event.target.files[0]);
     formik.setFieldValue(name, file);
+    setSelectedImage(file)
     setUploading(false);
   }
 
@@ -85,7 +89,7 @@ const ProfileModal = ({ open, handleClose }) => {
                 <React.Fragment>
                   <div className='w-full'>
                     <div className='relative'>
-                      <img src="https://ogden_images.s3.amazonaws.com/www.lockhaven.com/images/2021/01/06173002/BreakingBad1.jpg" className="w-full h-[12rem] object-cover object-top" alt="" />
+                      <img src={auth?.user?.backgroundImage || selectedImage || "https://ogden_images.s3.amazonaws.com/www.lockhaven.com/images/2021/01/06173002/BreakingBad1.jpg"} className="w-full h-[12rem] object-cover object-top" alt="" />
 
                       <input type="file" className='absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer'
                         onChange={handleImageChange} name='backgroundImage'
@@ -96,7 +100,7 @@ const ProfileModal = ({ open, handleClose }) => {
 
                   <div className='py-4 ml-4 w-full h-[6rem]'>
                     <div className=' -mt-[79px]'>
-                      <Avatar alt="Jitesh Raghav" src="https://avatars.githubusercontent.com/u/93904444?v=4" sx={{ width: "8rem", height: "8rem", border: "4px solid white" }} />
+                      <Avatar alt="Jitesh Raghav" src={auth?.user?.image || selectedImage || ""} sx={{ width: "8rem", height: "8rem", border: "4px solid white" }} />
 
                       <input type='file' name='image' className='absolute top-0 left-0 w-[10rem] h-full opacity-0 cursor-pointer' onChange={handleImageChange} />
 
