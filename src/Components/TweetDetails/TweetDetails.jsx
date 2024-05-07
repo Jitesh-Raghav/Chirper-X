@@ -4,7 +4,7 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace"
 import { Divider } from '@mui/material';
 import TweetDetailsCard from './TweetDetailsCard';
 import { useDispatch, useSelector } from 'react-redux';
-import { findTweetsById } from '../Tweet/Action';
+import { findTweetsById } from '../../Store/Tweet/Action';
 import TweetCard from '../HomeSection/TweetCard';
 
 const TweetDetails = () => {

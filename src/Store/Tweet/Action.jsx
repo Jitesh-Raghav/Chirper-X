@@ -7,7 +7,7 @@ export const getAllTweets=()=>async(dispatch)=>{
       console.log("get all tweets: ",data)
       dispatch({type:GET_ALL_TWEETS_SUCCESS, payload:data})
     }catch(error){
-        console.log("error is: ",error)
+        console.log("get all tweets error: ",error)
       dispatch({type:GET_ALL_TWEETS_FAILURE, payload:error.message})
     }
 }
@@ -58,7 +58,7 @@ export const createTweet=(tweetData)=>async(dispatch)=>{
 
 export const createTweetReply=(tweetData)=>async(dispatch)=>{
     try{
-      const{data}= await api.post(`/api/tweets/reply`, tweetData, { timeout: 5000 })
+      const{data}= await api.post(`/api/tweets/reply`, tweetData)
       console.log("reply tweet",data)
       dispatch({type:REPLY_TWEET_SUCCESS, payload:data})
     }catch(error){

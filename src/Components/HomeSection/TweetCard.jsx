@@ -14,8 +14,9 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import FavoriteRounded from '@mui/icons-material/FavoriteRounded';
 import ReplyModal from './ReplyModal';
-import { useDispatch } from 'react-redux';
-import { createRetweet, likeTweet } from '../Tweet/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { createRetweet, likeTweet } from '../../Store/Tweet/Action';
+import moment from 'moment';
 
 const TweetCard = ({item}) => {
 
@@ -26,6 +27,9 @@ const TweetCard = ({item}) => {
     const dispatch= useDispatch();
 
     const navigate = useNavigate();
+
+    const {auth}= useSelector(store=>store)
+    console.log("auth user is :", auth )
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -64,7 +68,7 @@ const TweetCard = ({item}) => {
         </div> */}
 
             <div className='flex space-x-5'>
-                { <Avatar onClick={() => navigate(`/profile/${item?.user.id}`)} className="cursor-pointer" alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4" /> }
+                { <Avatar onClick={() => navigate(`/profile/${item?.user?.id}`)} className="cursor-pointer" alt="username" src={item?.user?.image} /> }
 
                 <div className="w-full">
                     <div className="flex justify-between items-center">
@@ -72,7 +76,8 @@ const TweetCard = ({item}) => {
 
                             <span className="font-semibold">{item?.user?.fullName}</span>
                             <VerifiedIcon fontSize='small' className="text-[#2196f3]" />
-                            <span className="text-gray-500">@{item?.user?.fullName.split(" ").join("_").toLowerCase()} .    2m</span>
+                            <span className="text-gray-500">@{item?.user?.fullName.split(" ").join("_").toLowerCase()}  .  {moment(item?.createdAt).fromNow(true)}
+</span>
 
                         </div>
 
@@ -107,12 +112,12 @@ const TweetCard = ({item}) => {
 
                     <div className="mt-0">
                        <div className="cursor-pointer w-full"  onClick={()=>navigate(`/tweet/${item?.id}`)} >
-                         <p className='mb-2 p-0 flex items-start'>{item?.content} <span className="text-[#2196f3]"></span></p>
-                         <img className="border border-gray-800 p-2  rounded-sm w-[34rem]" src={item?.image} alt="" />
+                         <p className='mb p-0 flex items-start text-left'>{item?.content} <span className="text-[#2196f3]"></span></p>
+                         {item?.image && (<img className="border m-1 border-gray-800 p-2 rounded-sm w-[34rem]" src={item.image} alt="" />)}
                        </div>
                     </div>
 
-                    <div className="flex justify-between items-center py-4 flex-wrap">
+                    <div className="flex justify-between items-center py-3 flex-wrap">
                         <div className='flex items-center space-x-3 text-gray-500'>
                             <ChatBubbleOutlineRoundedIcon className='cursor-pointer' onClick={handleOpenReplyModal}/>
                             <p>{item?.totalReplies}</p>
@@ -132,7 +137,7 @@ const TweetCard = ({item}) => {
                         
                         <div className='flex items-center space-x-3 text-gray-500'>
                             <BarChartOutlinedIcon className='cursor-pointer' onClick={OpenReplySection}/>
-                            <p>418</p>
+                            <p>{Math.floor(Math.random() * 1000)}</p>
                         </div>
 
                         <div className='flex items-center space-x-3 text-gray-500'>

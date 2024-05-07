@@ -7,10 +7,11 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 import TweetCard from './TweetCard';
 import ReplyModal from './ReplyModal';
-import { createTweet, getAllTweets } from '../Tweet/Action';
+import { createTweet, getAllTweets } from '../../Store/Tweet/Action';
 import { useDispatch, useSelector } from 'react-redux';
-import { tweetReducer } from '../Tweet/Reducer';
+import { tweetReducer } from '../../Store/Tweet/Reducer';
 import { UploadToCloudinary } from '../../Utils/UploadToCloudinary';
+import { Divider } from '@mui/material';
 
 const validationSchema= Yup.object().shape({     //for validation purposes
     content:Yup.string().required("Tweet text is required")
@@ -22,8 +23,10 @@ const HomeSection = () => {
   const [selectedImage, setSelectedImage]= useState();
   const dispatch= useDispatch();
 
+  const {auth}= useSelector(store=>store)
+
   const {tweet} = useSelector(store=>store)
-  console.log("tweet: "+ JSON.stringify(tweet))
+  console.log("STORE TWEET",tweet)
 
     const handleSubmit=(values, actions)=>{
       dispatch(createTweet(values))
@@ -60,9 +63,9 @@ const HomeSection = () => {
         <h1 className="py-5 flex text-xl font-bold opacity-90">Home</h1>
       </section>
 
-      <section className="pb-10 flex items-start">
+      <section className="pb-7 flex items-start">
         <div className="flex space-x-5">
-            <Avatar alt="username" src="https://avatars.githubusercontent.com/u/93904444?v=4"/>
+            <Avatar alt="username" src={auth?.user?.image}/>
             <div className="w-full">
                 <form onSubmit={formik.handleSubmit}>
                     <div>
@@ -98,10 +101,22 @@ const HomeSection = () => {
       </section>
       {/* <hr className="border-t border-gray-700 mt-0 mb-6" /> */}
 
+      <Divider sx={{ bgcolor: 'grey.900' }}/>
+
       
-      <section>
+      {/* <section>
         {tweet.tweets.map((item)=><TweetCard item={item}/>)}
-      </section>
+      </section> */}
+
+<section>
+  {tweet.tweets.map((item, index) => (
+    <React.Fragment key={item.id}>
+      <TweetCard item={item} />
+      {index !== tweet.tweets.length - 1 && <hr className="p-2 border-gray-900" />}
+    </React.Fragment>
+  ))}
+</section>
+
       
     </div>
   )

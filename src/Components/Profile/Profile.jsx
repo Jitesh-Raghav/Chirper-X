@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace"
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Avatar, Button } from '@mui/material';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
@@ -15,7 +15,9 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TweetCard from "../HomeSection/TweetCard"
 import ProfileModal from './ProfileModal';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { findUserById, followUser } from '../../Store/Auth/Action';
+import { findTweetsByLikeContainsUser, getUsersTweet } from '../../Store/Tweet/Action';
 
 
 const Profile = () => {
@@ -27,11 +29,17 @@ const Profile = () => {
     const navigate = useNavigate();
     const handleBack = () => navigate(-1);
     
-    const {auth}= useSelector(store=>store)
+    const {auth, tweet}= useSelector(store=>store)
+
+    const dispatch = useDispatch();
+    const {id}= useParams()
 
     const handleFollowUser = () => {
-        console.log("folow user");
+        dispatch(followUser(id))
+        console.log("follow user");
     }
+
+    const [isHovered, setIsHovered] = useState(false);
 
      //MUI TAB COMPONENT
       const [value, setValue] = useState("1");  
@@ -47,6 +55,11 @@ const Profile = () => {
     };
 
  
+    useEffect(()=>{
+      dispatch(findUserById(id))
+      dispatch(getUsersTweet(id))
+      dispatch(findTweetsByLikeContainsUser(id))
+    },[id]);
 
     return (
         <div>
@@ -54,40 +67,60 @@ const Profile = () => {
                 <KeyboardBackspaceIcon className='cursor-pointer' onClick={handleBack} />
 
                 <div >
-                    <h1 className="pt-5 text-xl font-bold opacity-90 ml-5 leading-tight">{auth?.user?.fullName}</h1>
-                    <p className='text-gray-500 text-sm  flex items-start ml-5 mb-1'>6,112 posts</p>
+                    <h1 className="pt-5 text-xl font-bold opacity-90 ml-5 leading-tight">{auth?.findUser?.fullName}</h1>
+                    <p className='text-gray-500 text-sm  flex items-start ml-5 mb-1'>{Math.floor(Math.random() * 20)} posts</p>
                 </div>
 
             </section>
 
             <section>
-                <img className="w-[100%] h-[15rem] object-cover object-top" src={auth?.user?.backgroundImage} alt="" />
+                <img className="w-[100%] h-[15rem] object-cover object-top" src={auth?.findUser?.backgroundImage} alt="" />
             </section>
 
             <section>
                 <div className='flex justify-between items-start h-[5rem] ml-5'>
 
                     <div className=' -mt-[5rem] '>
-                        <Avatar alt="Jitesh Raghav" src={auth?.user?.image}
+                        <Avatar alt="Jitesh Raghav" src={auth?.findUser?.image}
                             sx={{ width: "10rem", height: "10rem", border: "4px solid black" }} />
                     </div>
                     <div className='mt-5 mr-5'>
-                        {true ?
+                        {auth?.findUser?.req_user ?
                             <Button onClick={handleOpenProfileModal} sx={{ borderRadius: "20px", bgcolor: "black", paddingX:"20px", textTransform:"none", color: "white", border: "1px solid white", }}>Edit profile</Button> :
-                            <Button onClick={handleFollowUser} variant="contained" sx={{ borderRadius: "20px" }}>{true ? "Follow" : "Unfollow"}</Button>}
+                            // <Button onClick={handleFollowUser} variant="contained" sx={{ borderRadius: "20px" }}>{auth?.findUser?.followed ? "Following" : "Follow"}</Button>
+                            <Button
+                            onClick={handleFollowUser}
+                            variant={auth?.findUser?.followed ? "outlined" : "contained"}
+                            color={auth?.findUser?.followed ? "primary" : "inherit"}
+                            sx={{
+                              borderRadius: "20px", textTransform:"none", fontSize:"1rem", fontWeight:520,
+                              backgroundColor: auth?.findUser?.followed ? "transparent" : "primary.main",
+                              color: auth?.findUser?.followed ? "primary.main" : "white",
+                              "&:hover": {
+                                backgroundColor: auth?.findUser?.followed ? "transparent" : "primary.dark",
+                                color: auth?.findUser?.followed ? "error.main" : "white",
+                              },
+                            }}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                          >
+                               {auth?.findUser?.followed ? (isHovered ? "Unfollow" : "Following") : "Follow"}
+                          </Button>
+                           //this is done cuz i want the follow button to be solid and follwing to be hallow, and when we hover on following, it should turn to unfollow
+                          }
                     </div>
                 </div>
 
                 <div className='ml-4'>
                     <div className='flex items-center mt-4'>
-                        <h1 className="font-bold text-lg">{auth?.user?.fullName}</h1>
+                        <h1 className="font-bold text-lg">{auth?.findUser?.fullName}</h1>
                         {true && <VerifiedIcon fontSize='small' className="text-[#2196f3] ml-1" />}
                     </div>
-                    <h1 className='text-gray-500 flex items-start'>@{auth?.user?.fullName.split(" ").join("_").toLowerCase()}</h1>
+                    <h1 className='text-gray-500 flex items-start'>@{auth?.findUser?.fullName.split(" ").join("_").toLowerCase()}</h1>
                 </div>
 
                 <div className='my-3 ml-4 flex items-start'>
-                    <p>{auth?.user?.bio}</p>
+                    <p>{auth?.findUser?.bio}</p>
                 </div>
 
                 <div className='flex items-center space-x-3 ml-2'>
@@ -99,11 +132,11 @@ const Profile = () => {
 
                 <div className='flex items-center space-x-5 ml-3 my-3'>
                     <div className='flex items-center space-x-1'>
-                        <p className='font-semibold'>49</p>
+                        <p className='font-semibold'>{auth?.findUser?.following?.length}</p>
                         <p className='text-gray-500'>Following</p>
                     </div>
                     <div className='flex items-center space-x-1'>
-                        <p className='font-semibold'>183.9K</p>
+                        <p className='font-semibold'>{auth?.findUser?.followers?.length}</p>
                         <p className='text-gray-500'>Followers</p>
                     </div>
                 </div>
@@ -122,13 +155,21 @@ const Profile = () => {
             <Tab label="Likes" value="5" style={{  color: 'white', minWidth:"20%", textTransform :"none" }} />
           </TabList>
         </Box>
-        <TabPanel value="1"><TweetCard/> <TweetCard/>
-        
+
+
+        <TabPanel value="1">
+         {tweet?.tweets?.map((item)=>(<TweetCard item={item}/>))}
         </TabPanel>
+
         <TabPanel value="2">Item Two</TabPanel>
         <TabPanel value="3">Item Three</TabPanel>
         <TabPanel value="4">Item Four</TabPanel>
-        <TabPanel value="5">Item Five</TabPanel>
+
+        <TabPanel value="5">
+        {tweet?.tweets?.user?.followers?.map((item)=>(
+             <p className="text-white">{item.fullName}</p>
+            ))}
+        </TabPanel>
       </TabContext>
     </Box>
             </section>
