@@ -72,7 +72,7 @@ const Navigation = () => {
 
           <div className=''>
             <p>{auth.user?.fullName}</p>
-            <span className="block opacity-70">@{auth.user?.fullName.split(" ").join("_").toLowerCase()}</span>
+            <span className="block opacity-70">@{auth.user?.fullName?.split(" ").join("_").toLowerCase()}</span>
           </div>
  
          

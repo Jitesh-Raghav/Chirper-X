@@ -81,7 +81,7 @@ export default function ReplyModal({ open, handleClose , item}) {
 
                   <span className="font-semibold">{item?.user?.fullName}</span>
                   <VerifiedIcon fontSize='small' className="text-[#2196f3]" />
-                  <span className="text-gray-600">@{item?.user?.fullName.split(" ").join("_").toLowerCase()} .    2m</span>
+                  <span className="text-gray-600">@{item?.user?.fullName?.split(" ").join("_").toLowerCase()} .    2m</span>
 
                 </div>
 

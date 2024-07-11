@@ -73,12 +73,12 @@ const TweetCard = ({item}) => {
                 <div className="w-full">
                     <div className="flex justify-between items-center">
                     <div className="flex items-center cursor-pointer space-x-2">
-    <span className="font-semibold">{item?.user?.fullName}</span>
-    {item?.user?.verified && <VerifiedIcon fontSize='small' className="text-[#2196f3]" />}
-    {item?.createdAt && (
-        <span className="text-gray-500">
-            @{item?.user?.fullName ? item.user.fullName.split(" ").join("_").toLowerCase() : ""} . {moment(item.createdAt).fromNow(true)}
-        </span>
+               <span className="font-semibold">{item?.user?.fullName}</span>
+                {item?.user?.verified && <VerifiedIcon fontSize='small' className="text-[#2196f3]" />}
+                {item?.createdAt && (
+                 <span className="text-gray-500">
+                  @{item?.user?.fullName ? item.user.fullName.split(" ").join("_").toLowerCase() : ""} . {moment(item.createdAt).fromNow(true)}
+             </span>
     )}
 </div>
 

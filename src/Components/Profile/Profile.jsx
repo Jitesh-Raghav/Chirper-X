@@ -116,7 +116,7 @@ const Profile = () => {
                         <h1 className="font-bold text-lg">{auth?.findUser?.fullName}</h1>
                         {true && <VerifiedIcon fontSize='small' className="text-[#2196f3] ml-1" />}
                     </div>
-                    <h1 className='text-gray-500 flex items-start'>@{auth?.findUser?.fullName.split(" ").join("_").toLowerCase()}</h1>
+                    <h1 className='text-gray-500 flex items-start'>@{auth?.findUser?.fullName?.split(" ").join("_").toLowerCase()}</h1>
                 </div>
 
                 <div className='my-3 ml-4 flex items-start'>
