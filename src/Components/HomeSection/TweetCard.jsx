@@ -77,8 +77,8 @@ const TweetCard = ({item}) => {
                 {item?.user?.verified && <VerifiedIcon fontSize='small' className="text-[#2196f3]" />}
                 {item?.createdAt && (
                  <span className="text-gray-500">
-                  @{item?.user?.fullName ? item.user.fullName.split(" ").join("_").toLowerCase() : ""} . {moment(item.createdAt).fromNow(true)}
-             </span>
+                 @{item?.user?.fullName ? item.user.fullName.split(" ").join("_").toLowerCase() : ""} . {moment.utc(item.createdAt).local().fromNow(true)}
+               </span>
     )}
 </div>
 
