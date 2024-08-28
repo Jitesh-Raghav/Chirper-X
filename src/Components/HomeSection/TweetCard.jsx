@@ -67,7 +67,7 @@ const TweetCard = ({item}) => {
             <p>You Retweet</p>
         </div> */}
 
-            <div className='flex space-x-5'>
+            <div className='flex space-x-4'>
                 { <Avatar onClick={() => navigate(`/profile/${item?.user?.id}`)} className="cursor-pointer" alt="username" src={item?.user?.image} /> }
 
                 <div className="w-full">
@@ -76,7 +76,7 @@ const TweetCard = ({item}) => {
                <span className="font-semibold">{item?.user?.fullName}</span>
                 {item?.user?.verified && <VerifiedIcon fontSize='small' className="text-[#2196f3]" />}
                 {item?.createdAt && (
-                 <span className="text-gray-500">
+                 <span className="text-gray-500 hidden lg:block">
                  @{item?.user?.fullName ? item.user.fullName.split(" ").join("_").toLowerCase() : ""} . {moment.utc(item.createdAt).local().fromNow(true)}
                </span>
     )}
@@ -136,7 +136,7 @@ const TweetCard = ({item}) => {
                             <p>{item?.totalLikes}</p>
                         </div>
                         
-                        <div className='flex items-center space-x-3 text-gray-500'>
+                        <div className='hidden lg:flex  items-center space-x-3 text-gray-500'>
                             <BarChartOutlinedIcon className='cursor-pointer' onClick={OpenReplySection}/>
                             <p>{Math.floor(Math.random() * 1000)}</p>
                         </div>
@@ -145,7 +145,7 @@ const TweetCard = ({item}) => {
                             <BookmarkBorderIcon className='cursor-pointer' onClick={OpenReplySection}/>
                         </div>
 
-                        <div className='flex items-center space-x-3 text-gray-500'>
+                        <div className=' items-center space-x-3 text-gray-500 hidden lg:block'>
                             <FileUploadOutlinedIcon className='cursor-pointer' onClick={OpenReplySection}/>
                         </div>
 

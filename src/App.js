@@ -29,6 +29,11 @@ function App() {
        <Route path="/*" element={auth.user?<HomePage/>:<Authentication/>}>
 
        </Route>
+
+       {/* <Route path="/*" element={<HomePage/>}>
+
+      </Route> */}
+       
      </Routes>
 
     </div>

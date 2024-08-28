@@ -1,8 +1,8 @@
 import axios from "axios"
 
-// export const API_BASE_URL="http://localhost:8080"
+export const API_BASE_URL="http://localhost:8080"
 //export const API_BASE_URL="https://chirper-x-backend-production.up.railway.app"
-export const API_BASE_URL="https://reserve-contests-yn-beam.trycloudflare.com"
+// export const API_BASE_URL="https://reserve-contests-yn-beam.trycloudflare.com"
 
 
 export const api= axios.create({

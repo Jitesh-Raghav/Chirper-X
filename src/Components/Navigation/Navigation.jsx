@@ -40,7 +40,7 @@ const Navigation = () => {
   
     <div className="h-screen sticky top-0">
 
-      <div className="py-5 w-16">
+      <div className="py-5 lg:w-16 sm:w-8">
         <img src={logo}/>
       </div>
 
@@ -50,12 +50,12 @@ const Navigation = () => {
           <div
             className="cursor-pointer flex space-x-3" onClick={() => item?.title === "Profile" ? navigate(`/profile/${auth?.user?.id}`) : navigate(item?.path)}>
             {item?.icon}
-            <p className="text-xl cursor-pointer">{item?.title}</p>
+            <p className="text-xl cursor-pointer hidden lg:block">{item?.title}</p>
           </div>)}
       </div>
 
       <div className="py-10">
-        <Button sx={{ width: "98%", borderRadius: "29px", py: "15px", bgcolor: "#2196f3" }} variant='contained'>  {/*Styled with MUI */}
+        <Button sx={{ width: "98%", borderRadius: "29px", py: "15px", bgcolor: "#2196f3",display: { xs: 'none', md: 'flex' } }} variant='contained'>  {/*Styled with MUI */}
           Tweet
         </Button>
 
@@ -71,17 +71,20 @@ const Navigation = () => {
           <Avatar alt="username" src={auth?.user?.image} />
 
           <div className=''>
-            <p>{auth.user?.fullName}</p>
-            <span className="block opacity-70">@{auth.user?.fullName?.split(" ").join("_").toLowerCase()}</span>
+            <p className='hidden lg:block'>{auth.user?.fullName}</p>
+            <span className="opacity-70 hidden lg:block">@{auth.user?.fullName?.split(" ").join("_").toLowerCase()}</span>
           </div>
  
          
-          <Button         
+          <Button    
             id="basic-button"
             aria-controls={open ? 'basic-menu' : undefined}  //this code from 68 to 88 copied from mui menu
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
+            sx={{
+              display: { xs: 'none', md: 'flex' } // This line hides the button on extra-small screens and shows it on medium and larger screens.
+            }}
           >
             <MoreHorizIcon />
           </Button>
