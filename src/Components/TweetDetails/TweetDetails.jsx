@@ -25,9 +25,11 @@ const TweetDetails = () => {
     
 
   return (
+
     <React.Fragment>
-        
-        <div className='flex items-center mt-6 mb-6'>
+      <div className='bg-black min-h-screen w-full'>
+         
+        <div className='flex items-center mt-6 mb-6 '>
         <section className={"z-50 flex items-center sticky top-0 opacity-85 bg-black"}>
                 <KeyboardBackspaceIcon className='cursor-pointer' onClick={handleBack} />
 
@@ -47,11 +49,18 @@ const TweetDetails = () => {
 
       <section>
         {tweet?.tweet?.replyTweets?.map((item)=><TweetCard key={item?.id} item={item}/>)}
-      </section>
+      </section> 
 
-        {/* <section>
+    
+         
+      
+      
+{/* 
+        <section>
             <TweetDetailsCard/>
         </section> */}
+
+       </div>
     </React.Fragment>
   )
 }

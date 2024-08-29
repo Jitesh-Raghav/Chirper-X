@@ -21,7 +21,7 @@ const HomePage = () => {
         xs={2} // Show on small screens too
         lg={2}
         className="w-full h-screen sticky top-0"
-        sx={{ display: { xs: 'none', lg: 'block' } }} // Adjust display for small screens
+        sx={{ display: { xs: 'none', lg: 'block' } }} // Put block here in xs and set xs of below grid to 10, if u wanna see the nav icons only..
       >
         <p className="text-center">
           <Navigation />
