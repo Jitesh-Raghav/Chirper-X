@@ -24,12 +24,12 @@ const Authentication = () => {
       </Grid>
 
           <Grid className='lg:px-16 px-6' item lg={5} xs={12}>
-            <h1 className='font-bold lg:text-9xl lg:mt-16 lg:ml-[-6%] text-7xl mt-16'>Happening Now</h1>
+            <h1 className='font-bold lg:text-7xl lg:mt-16 lg:ml-[-6%] text-7xl mt-16'>Happening Now</h1>
             <h1 className='font-bold text-3xl lg:pt-16 lg:pb-10 pt-[130px] pb-0 flex lg:items-start lg:ml-0 ml-[110px]'>Join today.</h1>
           
             <div className='w-[80%] mt-14 ml-[40px] lg:mt-0 lg:ml-0 lg:w-[60%]'>
                <div className='lg:w-full'>
-               <div className="w-[300px] sm:w-[100px] lg:w-[340px] rounded-2xl"><GoogleLogin /></div>
+               <div className="w-[300px] sm:w-[100px] lg:w-[310px] rounded-2xl"><GoogleLogin /></div>
                  <p className='py-5 text-center'>OR</p>
                  <Button onClick={handleOpenAuthModal} fullWidth variant="contained" size="large" sx={{borderRadius:"29px", py:"7px", textTransform:"none"}}>Create account</Button>
                  <p className='text-xs mt-1 text-justify text-gray-500 text leading-tight'>By signing up, you agree to the <span className='text-blue-400 hover:underline cursor-pointer'>Terms of Service</span> and <span className='text-blue-400 hover:underline cursor-pointer'>Privacy Policy</span>, including <span className='text-blue-400 hover:underline cursor-pointer'>Cookie Use</span>.</p>
