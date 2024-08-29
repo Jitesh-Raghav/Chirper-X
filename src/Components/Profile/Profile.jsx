@@ -62,7 +62,7 @@ const Profile = () => {
     },[id]);
 
     return (
-        <div>
+        <div className='min-h-screen'>
             <section className={"z-50 flex items-center sticky top-0 opacity-85 bg-black"}>
                 <KeyboardBackspaceIcon className='cursor-pointer' onClick={handleBack} />
 
@@ -123,11 +123,11 @@ const Profile = () => {
                     <p>{auth?.findUser?.bio}</p>
                 </div>
 
-                <div className='flex items-center space-x-3 ml-2'>
+                <div className='flex flex-wrap items-center space-x-3 ml-2'>
                     <p className='text-gray-500 flex items-center '><BusinessCenterOutlinedIcon sx={{ color: grey[500], margin: "2px" }} /> Education</p>
                     <p className='text-gray-500 flex items-center '><RoomOutlinedIcon sx={{ color: grey[500] }} />{auth?.user?.location}</p>
                     <p className='flex items-center m-2 text-blue-500 hover:underline cursor-pointer' ><AttachFileOutlinedIcon sx={{ color: grey[500] }} /> <Link to="https://rickroll.it/rickroll.mp4" target="_blank" rel="noopener noreferrer">bit.ly/2YgVeGM</Link></p>
-                    <p className='text-gray-500 flex items-center '><CalendarMonthOutlinedIcon sx={{ color: grey[500], margin: "2px" }} /> Joined August 2009</p>
+                    <p className='text-gray-500 items-center hidden lg:block'><CalendarMonthOutlinedIcon sx={{ color: grey[500], margin: "2px" }} /> Joined August 2009</p>
                 </div>
 
                 <div className='flex items-center space-x-5 ml-3 my-3'>
