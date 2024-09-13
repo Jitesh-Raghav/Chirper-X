@@ -24,7 +24,7 @@ const Authentication = () => {
       </Grid>
 
           <Grid className='lg:px-16 px-6' item lg={5} xs={12}>
-            <h1 className='font-bold lg:text-7xl lg:mt-16 lg:ml-[-6%] text-7xl mt-16'>Happening Now</h1>
+            <h1 className='font-bold lg:text-8xl lg:mt-16 lg:ml-[-10%] text-7xl mt-16'>Happening Now</h1>
             <h1 className='font-bold text-3xl lg:pt-16 lg:pb-10 pt-[130px] pb-0 flex lg:items-start lg:ml-0 ml-[110px]'>Join today.</h1>
           
             <div className='w-[80%] mt-14 ml-[40px] lg:mt-0 lg:ml-0 lg:w-[60%]'>
