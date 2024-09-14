@@ -2,7 +2,7 @@ import axios from "axios"
 
 // export const API_BASE_URL="http://localhost:8080"
 //export const API_BASE_URL="https://chirper-x-backend-production.up.railway.app"
- export const API_BASE_URL="https://mostly-respondents-grass-another.trycloudflare.com"
+ export const API_BASE_URL="https://chirper-x-backend-production-a429.up.railway.app"
 
 
 export const api= axios.create({
