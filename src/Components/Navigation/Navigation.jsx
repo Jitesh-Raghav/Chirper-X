@@ -48,7 +48,7 @@ const Navigation = () => {
       <div className="space-y-1">
         {NavigationMenu.map((item) =>
           <div
-            className="cursor-pointer flex space-x-3 hover:bg-gray-300 hover:bg-opacity-10 hover:rounded-full py-3 px-2 text-lg" onClick={() => item?.title === "Profile" ? navigate(`/profile/${auth?.user?.id}`) : navigate(item?.path)}>
+            className="cursor-pointer flex space-x-3 hover:bg-gray-300 hover:bg-opacity-10 hover:rounded-full py-1 px-2 text-lg" onClick={() => item?.title === "Profile" ? navigate(`/profile/${auth?.user?.id}`) : navigate(item?.path)}>
             {item?.icon}
             <p className="text-xl cursor-pointer hidden lg:block">{item?.title}</p>
           </div>)}
