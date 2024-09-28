@@ -29,7 +29,7 @@ const Message = () => {
              </div>
            </div>
            
-           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
+           <div className='flex items-center justify-start mt-6 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
              <img src={Namo} className='w-10 rounded-full' alt="" />
              <div>
              <span className='font-bold text-lg'>Narendra Modi</span>
@@ -39,7 +39,7 @@ const Message = () => {
              </div>
            </div>
 
-           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
+           <div className='flex items-center justify-start mt-6 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
              <img src={Kutta} className='w-10 rounded-full' alt="" />
              <div>
              <span className='font-bold text-lg'>Dhrampal</span>
@@ -48,7 +48,7 @@ const Message = () => {
              </div>
            </div>
 
-           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
+           <div className='flex items-center justify-start mt-6 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
              <img src={Cena} className='w-10 rounded-full' alt="" />
              <div>
              <span className='font-bold text-lg'>John Cena</span>

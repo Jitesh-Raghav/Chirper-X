@@ -25,7 +25,7 @@ const Notifications = () => {
         <p className='text-xl font-bold text-gray-400 mt-1 py-3'>Mentions</p>
       </div>
 
-      <div className='mt-6 ml-3 border-b mb-3 border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
+      <div className='mt-6 ml-3 border-b border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
         <div className='flex items-center justify-start space-x-1'>
         <FavoriteIcon className='text-pink-600' style={{ fontSize: 40 }} />
         <img src={Virat} className='w-10 rounded-full' alt="" />
@@ -37,7 +37,7 @@ const Notifications = () => {
       </p>
    </div>
 
-      <div className='mt-6 ml-3 border-b mb-3 border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
+      <div className='mt-6 ml-3 border-b border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
             <RepeatIcon className='text-green-500' style={{ fontSize: 40 }}/>
             <AccountCircleIcon style={{ fontSize: 40 }}/>
@@ -45,7 +45,7 @@ const Notifications = () => {
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Garima </span><span className='ml-1'>liked your retweet</span></p>
       </div>
 
-      <div className='mt-6 ml-3 border-b mb-3 border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
+      <div className='mt-6 ml-3 border-b border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
             <FavoriteIcon className='text-pink-600' style={{ fontSize: 40 }}/>
             <AccountCircleIcon style={{ fontSize: 40 }}/>
@@ -53,7 +53,7 @@ const Notifications = () => {
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Garima </span><span className='ml-1'>retweetd your post</span></p>
       </div>
 
-      <div className='mt-6 ml-3 border-b mb-3 border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
+      <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
             <PersonIcon style={{ fontSize: 40 }}/>
             <AccountCircleIcon style={{ fontSize: 40 }}/>
@@ -61,7 +61,7 @@ const Notifications = () => {
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Benjamin </span><span className='ml-1'>followed you</span></p>
       </div>
 
-      <div className='mt-6 ml-3 border-b mb-3 border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
+      <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
         <div className='flex items-center justify-start space-x-1'>
         <RepeatIcon className='text-green-500' style={{ fontSize: 40 }} />
         <img src={Namo} className='w-10 rounded-full' alt="" />
@@ -74,7 +74,7 @@ const Notifications = () => {
    </div>
 
 
-      <div className='mt-6 ml-3 border-b mb-3 border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
+      <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
             <PersonIcon style={{ fontSize: 40 }}/>
             <AccountCircleIcon style={{ fontSize: 40 }}/>
@@ -82,7 +82,7 @@ const Notifications = () => {
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Devanshu Chauhan </span><span className='ml-1'>followed you</span></p>
       </div>
 
-      <div className='mt-6 ml-3 border-b mb-3 border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
+      <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
             <FavoriteIcon  className='text-pink-600' style={{ fontSize: 40 }}/>
             <AccountCircleIcon style={{ fontSize: 40 }}/>
