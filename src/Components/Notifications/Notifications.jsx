@@ -28,7 +28,7 @@ const Notifications = () => {
       <div className='mt-6 ml-3 border-b border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
         <div className='flex items-center justify-start space-x-1'>
         <FavoriteIcon className='text-pink-600' style={{ fontSize: 30 }} />
-        <img src={Virat} className='w-10 rounded-full' alt="" />
+        <img src={Virat} className='w-8 rounded-full' alt="" />
         </div>
         <p className='ml-2 font-normal text-white flex items-center justify-start mt-2 text-lg mb-4'>
         <span className='font-bold text-lg'>Virat Kohli</span>
@@ -64,7 +64,7 @@ const Notifications = () => {
       <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
         <div className='flex items-center justify-start space-x-1'>
         <RepeatIcon className='text-green-500' style={{ fontSize: 30 }} />
-        <img src={Namo} className='w-10 rounded-full' alt="" />
+        <img src={Namo} className='w-8 rounded-full' alt="" />
         </div>
         <p className='ml-2 font-normal text-white flex items-center justify-start mt-2 text-lg mb-4'>
         <span className='font-bold text-lg'>Narendra Modi</span>
