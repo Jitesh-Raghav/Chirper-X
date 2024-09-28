@@ -8,6 +8,9 @@ import Profile from "../Profile/Profile";
 import { Route, Routes } from 'react-router-dom';
 import TweetDetails from "../TweetDetails/TweetDetails";
 import { Divider } from '@mui/material';
+import Explore from '../Explore/Explore.jsx';
+import Notifications from '../Notifications/Notifications.jsx'
+import Message from '../Messages/Message.jsx'
 
 const HomePage = () => {
   return (
@@ -40,10 +43,13 @@ const HomePage = () => {
         item
         xs={12} // Show full width on small screens
         lg={6}
-        className="w-full relative"
+        className="w-full relative px-0"
       >
         <Routes>
           <Route path="/home" element={<HomeSection />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/notification" element={<Notifications />} />
+          <Route path="/message" element={<Message />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/tweet/:id" element={<TweetDetails />} />
         </Routes>
