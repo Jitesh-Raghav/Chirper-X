@@ -13,7 +13,7 @@ const Notifications = () => {
   return (
     <div>
       
-      <div className='flex items-center justify-between mt-2 mb-14'>
+      <div className='flex items-center justify-between mt-3 mb-6'>
         <p className='font-bold text-2xl'>Notifications</p>
         <SettingsIcon/>
         

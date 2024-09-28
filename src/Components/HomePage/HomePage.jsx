@@ -11,6 +11,10 @@ import { Divider } from '@mui/material';
 import Explore from '../Explore/Explore.jsx';
 import Notifications from '../Notifications/Notifications.jsx'
 import Message from '../Messages/Message.jsx'
+import Communities from "../Community/Communities.jsx";
+import List from '../Lists/List.jsx';
+import Verified from '../Verified/Verified.jsx'
+import More from '../More/More.jsx'
 
 const HomePage = () => {
   return (
@@ -50,6 +54,10 @@ const HomePage = () => {
           <Route path="/explore" element={<Explore />} />
           <Route path="/notification" element={<Notifications />} />
           <Route path="/message" element={<Message />} />
+          <Route path="/communities" element={<Communities />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/more" element={<More />} />
+          <Route path="/verified" element={<Verified />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/tweet/:id" element={<TweetDetails />} />
         </Routes>

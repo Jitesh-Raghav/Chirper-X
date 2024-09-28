@@ -1,10 +1,10 @@
 import axios from "axios"
 
-export const API_BASE_URL="http://localhost:8080"
-//export const API_BASE_URL="https://chirper-x-backend-production.up.railway.app"
+// export const API_BASE_URL="http://localhost:8080"
 
 
-//  export const API_BASE_URL="https://chirper-x-backend-production-a429.up.railway.app"  //MAIN-URL
+
+ export const API_BASE_URL="https://chirper-x-backend-production-a429.up.railway.app"  //MAIN-URL
 
 
 export const api= axios.create({
