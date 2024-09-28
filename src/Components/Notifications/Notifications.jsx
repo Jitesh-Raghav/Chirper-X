@@ -27,7 +27,7 @@ const Notifications = () => {
 
       <div className='mt-6 ml-3 border-b border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
         <div className='flex items-center justify-start space-x-1'>
-        <FavoriteIcon className='text-pink-600' style={{ fontSize: 40 }} />
+        <FavoriteIcon className='text-pink-600' style={{ fontSize: 30 }} />
         <img src={Virat} className='w-10 rounded-full' alt="" />
         </div>
         <p className='ml-2 font-normal text-white flex items-center justify-start mt-2 text-lg mb-4'>
@@ -39,31 +39,31 @@ const Notifications = () => {
 
       <div className='mt-6 ml-3 border-b border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
-            <RepeatIcon className='text-green-500' style={{ fontSize: 40 }}/>
-            <AccountCircleIcon style={{ fontSize: 40 }}/>
+            <RepeatIcon className='text-green-500' style={{ fontSize: 30 }}/>
+            <AccountCircleIcon style={{ fontSize: 30 }}/>
          </div>
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Garima </span><span className='ml-1'>liked your retweet</span></p>
       </div>
 
       <div className='mt-6 ml-3 border-b border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
-            <FavoriteIcon className='text-pink-600' style={{ fontSize: 40 }}/>
-            <AccountCircleIcon style={{ fontSize: 40 }}/>
+            <FavoriteIcon className='text-pink-600' style={{ fontSize: 30 }}/>
+            <AccountCircleIcon style={{ fontSize: 30 }}/>
          </div>
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Garima </span><span className='ml-1'>retweetd your post</span></p>
       </div>
 
       <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
-            <PersonIcon style={{ fontSize: 40 }}/>
-            <AccountCircleIcon style={{ fontSize: 40 }}/>
+            <PersonIcon style={{ fontSize: 30 }}/>
+            <AccountCircleIcon style={{ fontSize: 30 }}/>
          </div>
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Benjamin </span><span className='ml-1'>followed you</span></p>
       </div>
 
       <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
         <div className='flex items-center justify-start space-x-1'>
-        <RepeatIcon className='text-green-500' style={{ fontSize: 40 }} />
+        <RepeatIcon className='text-green-500' style={{ fontSize: 30 }} />
         <img src={Namo} className='w-10 rounded-full' alt="" />
         </div>
         <p className='ml-2 font-normal text-white flex items-center justify-start mt-2 text-lg mb-4'>
@@ -76,16 +76,16 @@ const Notifications = () => {
 
       <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
-            <PersonIcon style={{ fontSize: 40 }}/>
-            <AccountCircleIcon style={{ fontSize: 40 }}/>
+            <PersonIcon style={{ fontSize: 30 }}/>
+            <AccountCircleIcon style={{ fontSize: 30 }}/>
          </div>
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Devanshu Chauhan </span><span className='ml-1'>followed you</span></p>
       </div>
 
       <div className='mt-6 ml-3 border-b  border-gray-700 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30'>
          <div className='flex items-center justify-start'>
-            <FavoriteIcon  className='text-pink-600' style={{ fontSize: 40 }}/>
-            <AccountCircleIcon style={{ fontSize: 40 }}/>
+            <FavoriteIcon  className='text-pink-600' style={{ fontSize: 30 }}/>
+            <AccountCircleIcon style={{ fontSize: 30 }}/>
          </div>
          <p className='ml-2 font-normaltext-xl text-white flex items-center justify-start mt-2 text-lg mb-4'><span className='font-bold'>Devanshu Chauhan </span><span className='ml-1'>liked your tweet</span></p>
       </div>
