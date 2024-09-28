@@ -31,9 +31,9 @@ const Notifications = () => {
         <img src={Virat} className='w-10 rounded-full' alt="" />
         </div>
         <p className='ml-2 font-normal text-white flex items-center justify-start mt-2 text-lg mb-4'>
-        <span className='font-bold'>Virat Kohli</span>
+        <span className='font-bold text-lg'>Virat Kohli</span>
         <VerifiedIcon className='text-blue-500 ml-1' style={{ fontSize: 18 }} /> {/* Verified Icon */}
-        <span className='ml-1'>liked your Post</span>
+        <span className='ml-1 text-lg'>liked your Post</span>
       </p>
    </div>
 
@@ -67,9 +67,9 @@ const Notifications = () => {
         <img src={Namo} className='w-10 rounded-full' alt="" />
         </div>
         <p className='ml-2 font-normal text-white flex items-center justify-start mt-2 text-lg mb-4'>
-        <span className='font-bold'>Narendra Modi</span>
+        <span className='font-bold text-lg'>Narendra Modi</span>
         <VerifiedIcon className='text-blue-500 ml-1' style={{ fontSize: 18 }} /> {/* Verified Icon */}
-        <span className='ml-1'>liked your Post</span>
+        <span className='ml-1 text-lg'>liked your Post</span>
       </p>
    </div>
 

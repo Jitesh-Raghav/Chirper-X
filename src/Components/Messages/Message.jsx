@@ -19,8 +19,8 @@ const Message = () => {
            <input  type="text" className='h-12 w-full bg-transparent rounded-full pl-12 bg-opacity-20 text-white border border-gray-700 focus:border-blue-600 outline-none' placeholder="Search Direct Messages" />
            </div>
 
-           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 p-3 rounded-lg'>
-             <img src={Virat} className='w-12 rounded-full' alt="" />
+           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
+             <img src={Virat} className='w-10 rounded-full' alt="" />
              <div>
              <span className='font-bold text-lg'>Virat Kohli</span>
              <VerifiedIcon className='text-blue-500 ml-1' style={{ fontSize: 18 }} /> {/* Verified Icon */}
@@ -29,8 +29,8 @@ const Message = () => {
              </div>
            </div>
            
-           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 p-3 rounded-lg'>
-             <img src={Namo} className='w-12 rounded-full' alt="" />
+           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
+             <img src={Namo} className='w-10 rounded-full' alt="" />
              <div>
              <span className='font-bold text-lg'>Narendra Modi</span>
              <VerifiedIcon className='text-blue-500 ml-1' style={{ fontSize: 18 }} /> {/* Verified Icon */}
@@ -39,8 +39,8 @@ const Message = () => {
              </div>
            </div>
 
-           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 p-3 rounded-lg'>
-             <img src={Kutta} className='w-12 rounded-full' alt="" />
+           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
+             <img src={Kutta} className='w-10 rounded-full' alt="" />
              <div>
              <span className='font-bold text-lg'>Dhrampal</span>
              <span className='font-normal text-lg text-gray-400 ml-1'>@bossmanpro . Sep 19</span>
@@ -48,8 +48,8 @@ const Message = () => {
              </div>
            </div>
 
-           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 p-3 rounded-lg'>
-             <img src={Cena} className='w-12 rounded-full' alt="" />
+           <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
+             <img src={Cena} className='w-10 rounded-full' alt="" />
              <div>
              <span className='font-bold text-lg'>John Cena</span>
              <VerifiedIcon className='text-blue-500 ml-1' style={{ fontSize: 18 }} /> {/* Verified Icon */}
