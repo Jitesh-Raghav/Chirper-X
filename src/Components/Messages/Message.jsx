@@ -22,39 +22,39 @@ const Message = () => {
            <div className='flex items-center justify-start mt-10 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
              <img src={Virat} className='w-10 rounded-full' alt="" />
              <div>
-             <span className='font-bold text-lg'>Virat Kohli</span>
+             <span className='font-bold text-sm'>Virat Kohli</span>
              <VerifiedIcon className='text-blue-500 ml-1' style={{ fontSize: 18 }} /> {/* Verified Icon */}
-             <span className='font-normal text-lg text-gray-400'>@imVKohli . Sep 27</span>
-             <p className='text-gray-400 text-lg font-light items-start justify-start text-start'>You sent a link</p>
+             <span className='font-normal text-sm text-gray-400'>@imVKohli . Sep 27</span>
+             <p className='text-gray-400 text-sm font-light items-start justify-start text-start'>You sent a link</p>
              </div>
            </div>
            
            <div className='flex items-center justify-start mt-6 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
              <img src={Namo} className='w-10 rounded-full' alt="" />
              <div>
-             <span className='font-bold text-lg'>Narendra Modi</span>
+             <span className='font-bold text-sm'>Narendra Modi</span>
              <VerifiedIcon className='text-blue-500 ml-1' style={{ fontSize: 18 }} /> {/* Verified Icon */}
-             <span className='font-normal text-lg text-gray-400'>@dicktate . Sep 19</span>
-             <p className='text-gray-400 text-lg font-light items-start justify-start text-start'>🙏🏼🌷</p>
+             <span className='font-normal text-sm text-gray-400'>@dicktate . Sep 19</span>
+             <p className='text-gray-400 text-sm font-light items-start justify-start text-start'>🙏🏼🌷</p>
              </div>
            </div>
 
            <div className='flex items-center justify-start mt-6 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
              <img src={Kutta} className='w-10 rounded-full' alt="" />
              <div>
-             <span className='font-bold text-lg'>Dhrampal</span>
-             <span className='font-normal text-lg text-gray-400 ml-1'>@bossmanpro . Sep 19</span>
-             <p className='text-gray-400 text-lg font-light items-start justify-start text-start'>Bhai phone utha, matter ho gya hai.</p>
+             <span className='font-bold text-sm'>Dhrampal</span>
+             <span className='font-normal text-sm text-gray-400 ml-1'>@bossmanpro . Sep 19</span>
+             <p className='text-gray-400 text-sm font-light items-start justify-start text-start'>Bhai phone utha, matter ho gya hai.</p>
              </div>
            </div>
 
            <div className='flex items-center justify-start mt-6 space-x-3 cursor-pointer hover:bg-gray-800 hover:bg-opacity-30 rounded-lg'>
              <img src={Cena} className='w-10 rounded-full' alt="" />
              <div>
-             <span className='font-bold text-lg'>John Cena</span>
+             <span className='font-bold text-sm'>John Cena</span>
              <VerifiedIcon className='text-blue-500 ml-1' style={{ fontSize: 18 }} /> {/* Verified Icon */}
-             <span className='font-normal text-lg text-gray-400'>@imjohncena . Sep 18</span>
-             <p className='text-gray-400 text-lg font-light items-start justify-start text-start'>I challenge you for Hell in a cell</p>
+             <span className='font-normal text-sm text-gray-400'>@imjohncena . Sep 18</span>
+             <p className='text-gray-400 text-sm font-light items-start justify-start text-start'>I challenge you for Hell in a cell</p>
              </div>
            </div>
     </div>
