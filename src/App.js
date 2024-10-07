@@ -26,9 +26,7 @@ function App() {
     <div className="App">
       
      <Routes>
-       <Route path="/*" element={auth.user?<HomePage/>:<Authentication/>}>
-
-       </Route>
+       <Route path="/*" element={auth.user?<HomePage/>:<Authentication/>}> </Route>
 
        {/* <Route path="/*" element={<HomePage/>}>
 
