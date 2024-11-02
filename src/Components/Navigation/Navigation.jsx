@@ -45,14 +45,44 @@ const Navigation = () => {
       </div>
 
 
-      <div className="space-y-3">
+      {/* <div className="space-y-3">
         {NavigationMenu.map((item) =>
           <div
             className="cursor-pointer flex space-x-3 hover:bg-gray-300 hover:bg-opacity-10 hover:rounded-full py-1 px-2 text-lg" onClick={() => item?.title === "Profile" ? navigate(`/profile/${auth?.user?.id}`) : navigate(item?.path)}>
             {item?.icon}
             <p className="text-xl cursor-pointer hidden lg:block">{item?.title}</p>
           </div>)}
-      </div>
+      </div> */}
+
+<div className="space-y-3">
+  {NavigationMenu.map((item) => (
+    <div
+      key={item?.title}
+      className="cursor-pointer flex space-x-3 hover:bg-gray-300 hover:bg-opacity-10 hover:rounded-full py-1 px-2 text-lg"
+      onClick={() => {
+        if (item?.title === "Home") {
+          // Scroll to the top smoothly and navigate to /home
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+          navigate("/home");
+        } else if (item?.title === "Profile") {
+          // Navigate to the Profile page
+          navigate(`/profile/${auth?.user?.id}`);
+        } else {
+          // Navigate to other paths
+          navigate(item?.path);
+        }
+      }}
+    >
+      {item?.icon}
+      <p className="text-xl cursor-pointer hidden lg:block">{item?.title}</p>
+    </div>
+  ))}
+</div>
+
+
 
       <div className="py-10">
         <Button sx={{ width: "98%", borderRadius: "29px", py: "15px", bgcolor: "#2196f3",display: { xs: 'none', md: 'flex' } }} variant='contained'>  {/*Styled with MUI */}
