@@ -3,6 +3,8 @@ import { Button, Grid } from '@mui/material';
 import { GoogleLogin } from '@react-oauth/google';
 import AuthModal from './AuthModal';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import {Vortex} from "../ui/vortex";
+import {Spotlight} from "../ui/spotlight";
 
 const Authentication = () => {
   const [openAuthModal, setOpenAuthModal] = useState(false);
@@ -18,17 +20,24 @@ const Authentication = () => {
 
   return (
     <div className='bg-black text-white min-h-screen'>
-       <Grid className="overflow-y-hidden" container>
+      
+       <Grid className="overflow-y-hidden z-50" container>
           <Grid className="hidden lg:block" item lg={7}>
             <div className="relative inline-block">
-              <img src="https://static.vecteezy.com/system/resources/previews/002/392/802/non_2x/seamless-patterns-with-colorful-waves-in-blue-shades-for-print-and-web-vector.jpg" alt="" className="w-full" />
+              <img src="https://static.vecteezy.com/system/resources/previews/002/392/802/non_2x/seamless-patterns-with-colorful-waves-in-blue-shades-for-print-and-web-vector.jpg" alt="" className="w-full z-50" />
               <svg viewBox="0 0 24 24" aria-hidden="true" className="absolute top-[0%] left-[7%] w-[80%] h-[80%]">
                 <g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g>
               </svg>
             </div>
           </Grid>
 
+         
           <Grid className='lg:px-16 px-6' item lg={5} xs={12}>
+         
+          {/* <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="white"
+      /> */}
             <h1 className='font-bold lg:text-8xl lg:mt-16 lg:ml-[-10%] text-7xl mt-16'>Happening Now</h1>
             <h1 className='font-bold text-3xl lg:pt-16 lg:pb-10 pt-[130px] pb-0 flex lg:items-start lg:ml-0 ml-[110px]'>Join today.</h1>
           
@@ -73,11 +82,13 @@ const Authentication = () => {
                 </Button>
               </div>
             </div>
-          
+            
           </Grid>
+         
        </Grid>
-
+       
        <AuthModal open={openAuthModal} handleClose={handleCloseAuthModal} />
+      
     </div>
   );
 };
