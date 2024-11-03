@@ -5,6 +5,7 @@ import {Route,Routes, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getUserProfile } from './Store/Auth/Action';
+import Landing from './Components/Landing/Landing';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
       
      <Routes>
-       <Route path="/*" element={auth.user?<HomePage/>:<Authentication/>}> </Route>
+       <Route path="/*" element={auth.user?<HomePage/>:<Landing/>}> </Route>
 
        {/* <Route path="/*" element={<HomePage/>}>
 

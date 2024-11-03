@@ -61,26 +61,24 @@ const Navigation = () => {
       className="cursor-pointer flex space-x-3 hover:bg-gray-300 hover:bg-opacity-10 hover:rounded-full py-1 px-2 text-lg"
       onClick={() => {
         if (item?.title === "Home") {
-          // Scroll to the top smoothly and navigate to /home
           window.scrollTo({
             top: 0,
             behavior: "smooth",
           });
           navigate("/home");
         } else if (item?.title === "Profile") {
-          // Navigate to the Profile page
           navigate(`/profile/${auth?.user?.id}`);
         } else {
-          // Navigate to other paths
           navigate(item?.path);
         }
       }}
     >
-      {item?.icon}
+      <span className="hover:animate-wiggle">{item?.icon}</span>
       <p className="text-xl cursor-pointer hidden lg:block">{item?.title}</p>
     </div>
   ))}
 </div>
+
 
 
 
