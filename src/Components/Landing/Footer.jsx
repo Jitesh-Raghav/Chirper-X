@@ -47,10 +47,10 @@ const Footer = () => {
           particleColor="#FFFFFF"
         />
       </div>
-      <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
+      <h1 className="md:text-7xl text-5xl lg:text-8xl font-bold text-center text-white relative z-20">
         Build great products
       </h1>
-      <p className="text-gray-400 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
+      <p className="text-gray-400 max-w-lg mx-auto my-2 text-md text-center relative z-10">
          Welcome to ChirperX, the ultimate microblogging platform. 
  We provide a fast, user-friendly, and secure space for you to share your thoughts with the world. 
  Whether you're posting quick updates, engaging with a lively community, or discovering trending topics, ChirperX has got you covered.
@@ -58,8 +58,8 @@ const Footer = () => {
          </p>
          <input
           type="text"
-          placeholder="Lets Talk"
-          className="rounded-lg border border-gray-700 focus:ring-2 focus:ring-blue-500 w-[60%] relative z-10 mt-4 bg-neutral-900 placeholder:text-gray-600 text-gray-300"
+          placeholder="  Lets Talk"
+          className="h-10 rounded-lg border border-gray-700 focus:ring-2 focus:ring-blue-500 w-[60%] relative z-10 mt-4 bg-neutral-900 placeholder:text-gray-600 text-gray-300"
         />
     </div>
   );
