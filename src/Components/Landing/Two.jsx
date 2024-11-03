@@ -88,7 +88,7 @@ const Two = () => {
           draggable="false"
         />
       </ContainerScroll>
-      <p className="text-xl lg:text-2xl font-semibold text-gray-300 text-center">Features we offer</p>
+      <p className="text-2xl lg:text-4xl font-semibold text-gray-300 text-center">Features we offer?</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
         {features.map((feature, index) => (
           <Feature key={feature.title} {...feature} index={index} />
