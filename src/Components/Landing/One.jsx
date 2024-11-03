@@ -3,8 +3,17 @@ import { Spotlight } from "../ui/spotlight";
 import { cn } from "../../Utils/utils";
 import { Cover } from "../ui/cover";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalTrigger,
+} from "../ui/animated-modal";
+import { motion } from "framer-motion";
+import LoginIcon from '@mui/icons-material/Login';
 
-const One = () => {
+const One = ({ onJoinNowClick }) => {
   function Navbar({ className }) {
     const [active, setActive] = useState(null);
 
@@ -85,6 +94,8 @@ const One = () => {
             <span className="text-blue-500">ChirperX:</span> Speak Your Mind in Real Time <br />
             Connect with a vibrant community that celebrates every thought!
           </p>
+          <button onClick={onJoinNowClick} className="mt-3 px-5 py-3 rounded-xl  text-white border-1 bg-blue-600 border-white hover:bg-blue-700">Sign Up</button>
+         
         </div>
       </div>
     </>

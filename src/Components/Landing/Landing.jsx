@@ -1,16 +1,29 @@
-import React from 'react'
+import React, { useRef } from 'react';
 import Authentication from '../Authentication/Authentication'
 import One from './One.jsx';
 import Two from "./Two.jsx";
+import Footer from './Footer.jsx';
 
-const landing = () => {
+const Landing = () => {
+  const authRef = useRef(null);
+
+  // Scroll function
+  const scrollToAuthentication = () => {
+    if (authRef.current) {
+      authRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-   <One/>
+   <One onJoinNowClick={scrollToAuthentication} />
    <Two/>
-    <Authentication/>
+      <div ref={authRef}> {/* Attach the ref to Authentication component */}
+        <Authentication />
+      </div>
+    <Footer/>
     </>
   )
 }
 
-export default landing
+export default Landing
